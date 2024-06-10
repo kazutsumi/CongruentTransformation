@@ -531,7 +531,7 @@ $S_{\theta}$ は $1$ を固有値に持たないので，$\det(E-S_{\theta}) \ne
 い換えることもできる．
 \begin{figure}[h]
   \centering
-  \includegraphics[height=4.5cm]{pictures/rotation2gen.pdf}
+  \includegraphics[height=5cm]{pictures/rotation2gen.pdf}
   \caption{$\bm{c}$ を中心とする $\theta$ 回転}
   \label{fig:rotation2gen}
 \end{figure}
@@ -552,45 +552,60 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \begin{equation}\label{eq:eigendecomp2}
   \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} \in V_{\theta}(1), \; \bm{b}^{-} \in V_{\theta}(-1)
 \end{equation}
-と分解する．$R_{\theta}^2=E$ であるから，
-\[
-  x \in \Inv(f) \Leftrightarrow R_{\theta}\bm{x} +\bm{b}^{+} + \bm{b}^{-} =\bm{x} \Leftrightarrow
-  \bm{x}+\bm{b}^{+}-\bm{b}^{-}=R_{\theta}\bm{x} \Leftrightarrow \bm{b}^{+} = \bm{0}
-\]
-である．従って，
+と分解する．ここで，$\Inv(f) \neq \emptyset$ とすると，$x \in \Inv(f)$
+に対して $f(\bm{x}) = {x}$ なので
+\begin{equation}\label{eq:xinInv}
+  R_{\theta}x +\bm{b}^{+} + \bm{b}^{-} = \bm{x}
+\end{equation}
+である．この式 (\ref{eq:xinInv}) の両辺に $R_{\theta}$ を左から掛ける
+と，$R_{\theta}^2=E, \; R_{\theta} \bm{b}^{\pm} = \pm \bm{b}^{\pm}$ なので
+\begin{equation}\label{eq:RxinInv}
+  \bm{x}+\bm{b}^{+}-\bm{b}^{-}=R_{\theta}\bm{x} 
+\end{equation}
+が得られる．これら (\ref{eq:xinInv}) と (\ref{eq:RxinInv}) から $b^{+}
+= \bm{0}$ より，$\bm{b} \in V_{\theta}(-1)$
+である．逆に，$\bm{b} \in V_{\theta}(-1)$ とすると，$R_{\theta}\bm{b}
+= -\bm{b}$ なので
+\begin{equation}\label{eq:halfinInv}
+  f\left(\frac{\bm{b}}{2}\right) = R_{\theta}\left(\frac{b}{2}\right) + \bm{b}
+  = -\frac{\bm{b}}{2}+\bm{b} = \frac{\bm{b}}{2}
+\end{equation}
+より，$\bm{b}/2 \in \Inv(f)$ だから $\Inv(f) \neq \emptyset$ である．以上から，
 \[
   \Inv(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_{\theta}(-1)
 \]
-である．これより，$\bm{b} \in V_{\theta}(-1)$ かそうでないかによって合
+である．これにより，$\bm{b} \in V_{\theta}(-1)$ かそうでないかによって合
 同変換 $f$ を分けることができる．
 
 
-まず，$\bm{b} \in V_{\theta}(-1)$ とする．$\Inv(f)$ が空集合でないので，
-連立 $1$ 次方程式
+初めに，$\bm{b} \in V_{\theta}(-1)$ とする．このとき $\Inv(f)$ は直線
+で，$f$ がこの直線 $\Inv(f)$ に関する鏡映であることを確かめよう．
+
+ま
+ず，$\Inv(f)$ が直線となることを確かめておく．$\Inv(f)$ が空集合でない
+ので，連立 $1$ 次方程式
 \[
   (E-R_{\theta})\bm{x} = \bm{b}
 \]
 は解を持つ．$R_{\theta}$ は $1$ を固有値に持つので $\det
 (E-R_{\theta}) = 0$ であり，$E-R_{\theta} \neq O$ だか
-ら，$\rank(E-R_{\theta})=1$ である．従って，\ref{sec:inv2}節で見たよう
-に $\Inv(f)$ は直線である．特に，
-\[
-  f\left( \frac{\bm{b}}{2}\right) = R_{\theta}\left(
-    \frac{\bm{b}}{2}\right) + \bm{b} = -\frac{\bm{b}}{2} + \bm{b} = \frac{\bm{b}}{2}
-\]
+ら，$\rank(E-R_{\theta})=1$ である．従って，$\dim V_{\theta}(1)=1$ なの
+で \ref{sec:inv2}節で見たように $\Inv(f)$ は直線である．特に，(\ref{eq:halfinInv})
 より $\bm{b}/2 \in \Inv(f)$ だから $\Inv(f)$ は $\bm{b}/2$ を通る．さら
 に，任意の $\bm{x} \in \Inv(f)$ に対して，
 \[
   (\bm{x}, \bm{b}) = (R_{\theta}\bm{x}, R_{\theta}\bm{b}) =
   (\bm{x}-\bm{b}, -\bm{b}) = -(\bm{x},\bm{b})+\|\bm{b}\|^2
 \]
-より $(\bm{x}, \bm{b}) = \|\bm{b}\|^2/2$ が成り立つから
-$\left( \bm{x}-\frac{\bm{b}}{2}, \bm{b}\right) =0$ とな
+より $(\bm{x}, \bm{b}) = \|\bm{b}\|^2/2$
+が成り立つから$\left( \bm{x}-\frac{\bm{b}}{2}, \bm{b}\right) =0$ とな
 り，$\Inv(f)$ と $\bm{b}$ は直交する．つま
-り，$\Inv(f)$ は $V_{\theta}(-1)^{\perp}=V_{\theta}(1)$ に平行である．
+り，$\Inv(f)$ は $V_{\theta}(-1)^{\perp}=V_{\theta}(1)$ に平行
+で $\bm{b}/2$ を通る直線である．
 
-$f$ は直線 $\Inv(f)$ に関する鏡映である．実際，任意の $\bm{x} \in
-\mathbb{R}^2$ と任意の $\bm{p} \in V_{\theta}(1)$ に対して，
+次に，実際に $f$ が直線 $\Inv(f)$ に関する鏡映であることを確かめる．任
+意の $\bm{x} \in \mathbb{R}^2$ と任意の $\bm{p} \in V_{\theta}(1)$ に対
+して，
 \begin{align*}
   \left( f\left(\bm{x}\right) - \bm{x}, \bm{p}\right) 
   &= (R_{\theta}\bm{x}, \bm{p}) +(\bm{b},\bm{p})-(\bm{x},\bm{p})=(R_{\theta}\bm{x}, R_{\theta}\bm{p})-(\bm{x}, \bm{p})
@@ -603,16 +618,16 @@ $f$ は直線 $\Inv(f)$ に関する鏡映である．実際，任意の $\bm{x}
 \end{align*}
 であるから，$f(\bm{x})-\bm{x}$ が $V_{\theta}(1)$ に，従っ
 て $\Inv(f)$に，直交し，$f(\bm{x})$ と $\bm{x}$ の中点が $\Inv(f)$ 上に
-あるので，$f$ は直線 $\Inv(f)$ に関する鏡映である（
+あるので，$f$ は確かに直線 $\Inv(f)$ に関する鏡映である（
 図\ref{fig:reflection2gen}）．
 \begin{figure}[h]
   \centering
-  \includegraphics[height=4.5cm]{pictures/reflection2gen.pdf}
+  \includegraphics[height=5cm]{pictures/reflection2gen.pdf}
   \caption{直線 $\Inv(f)$ に関する鏡映}
   \label{fig:reflection2gen}
 \end{figure}
 
-また，任意の $\bm{c} \in \Inv(f)$ に対して
+なお，任意の $\bm{c} \in \Inv(f)$ に対して
 \[
   f(\bm{x}) =  R_{\theta}\left( \bm{x} - \bm{c}\right) + \bm{c}
 \]
@@ -631,8 +646,9 @@ $f$ は直線 $\Inv(f)$ に関する鏡映である．実際，任意の $\bm{x}
   \label{fig:reflection2gen2}
 \end{figure}
 
+\newpage
 
-次に，$\bm{b} \notin V_{\theta}(-1)$ とする．このとき $f$ は滑り鏡映で
+続いて，$\bm{b} \notin V_{\theta}(-1)$ とする．このとき $f$ は滑り鏡映で
 あることを確かめよう．なお，平面上の滑り鏡映の定義は次の通りである．
 
 \begin{definition}
@@ -644,8 +660,8 @@ $f$ は直線 $\Inv(f)$ に関する鏡映である．実際，任意の $\bm{x}
 \end{definition}
 
 
-$\bm{b}$ を式 (\ref{eq:eigendecomp2})のように分解すると，$\bm{b}^{+}
-\neq \bm{0}$ である．従って，
+今 $\bm{b} \notin V_{\theta}(-1)$ としているので，$\bm{b}$ を式 (\ref{eq:eigendecomp2})のように分解する
+と $\bm{b}^{+} \neq \bm{0}$ である．従って，
 \[
   f(\bm{x}) = \left(R_{\theta}\bm{x} + \bm{b}^{-}\right) + \bm{b}^{+}
 \]
@@ -657,7 +673,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
 ベクトル $\bm{b}^{+}$ に関する滑り鏡映である（図\ref{fig:glide2}）．
  \begin{figure}[h]
    \centering
-   \includegraphics[height=4.5cm]{pictures/glide2.pdf}
+   \includegraphics[height=5cm]{pictures/glide2.pdf}
    \caption{滑り鏡映}
    \label{fig:glide2}
  \end{figure}
@@ -782,7 +798,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
   に $\bm{b}$ に直交し，$2$ 直線の距離は $\|\bm{b}\|/2$ である．
   \begin{figure}[h]
     \centering
-    \includegraphics[height=4cm]{pictures/translation2.pdf}
+    \includegraphics[height=5cm]{pictures/translation2.pdf}
     \caption{平行移動は平行な $2$ 直線に関する鏡映の合成である．}
     \label{fig:translation2}
   \end{figure}
@@ -807,7 +823,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
   離 $\|\bm{b}_2-\bm{b}_1\|$ は $L_1, L_2$ の距離の $2$ 倍である．
   \begin{figure}[h]
     \centering
-    \includegraphics[height=4cm]{pictures/translation2gen.pdf}
+    \includegraphics[height=5cm]{pictures/translation2gen.pdf}
     \caption{鏡映軸が平行な2つの鏡映の合成は平行移動である．}
     \label{fig:translation2gen}
   \end{figure}
@@ -846,7 +862,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
   は $\theta/2$ である．
   \begin{figure}[h]
     \centering
-    \includegraphics[height=4cm]{pictures/rotation2ref.pdf}
+    \includegraphics[height=5cm]{pictures/rotation2ref.pdf}
     \caption{回転は平行でない $2$ 直線に関する鏡映の合成である．}\label{fig:rotation2ref}
   \end{figure}
 
@@ -874,7 +890,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
   の方へ，回転角 $\phi-\theta$ は $L_1$ と $L_2$ のなす角の $2$ 倍である．
   \begin{figure}[h]
     \centering
-    \includegraphics[height=4.5cm]{pictures/rotation2refgen.pdf}   
+    \includegraphics[height=5cm]{pictures/rotation2refgen.pdf}   
     \caption{鏡映軸が平行でない2つの鏡映の合成は回転である．}
     \label{fig:rotation2refgen}
   \end{figure}
@@ -918,7 +934,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
   の鏡映の合成として表すことはできない．
   \begin{figure}[h]
     \centering
-    \includegraphics[height=4cm]{pictures/glide2ref.pdf}
+    \includegraphics[height=5cm]{pictures/glide2ref.pdf}
     \caption{滑り鏡映は $3$ 個の鏡映の合成である．}
     \label{fig:glide2ref}
   \end{figure}
@@ -1170,7 +1186,7 @@ $f_1(\bm{x})=A_1 \bm{x} + \bm{b}_1, \, f_2(\bm{x}) = A_2\bm{x} +
 \section{空間の合同変換}\label{sec:3dim}
 
 $f$ を空間 $\mathbb{R}^3$ の合同変換とする．定理\ref{thm:affine_rep}か
-ら $3$ 次直交行列と空間ベクトル $\bm{b} \in \mathbb{R}^3$ によって
+ら $3$ 次直交行列 $A$ と空間ベクトル $\bm{b} \in \mathbb{R}^3$ によって
 \[
   f(\bm{x}) = A \bm{x} + \bm{b}
 \]
