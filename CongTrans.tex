@@ -10,7 +10,7 @@
 \renewcommand{\bar}[1]{\overline{#1}}
 
 \DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\Inv}{Inv}
+\DeclareMathOperator{\Fix}{Fix}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\diag}{diag}
@@ -346,33 +346,33 @@ $f$ を平面 $\mathbb{R}^2$ の合同変換とする．定理\ref{thm:affine_re
 
 $f(\bm{x})=\bm{x}$ を満たす $\bm{x} \in \mathbb{R}^2$ を $f$ の固定点という．$f$ の固定点集合
 \[
-  \Inv(f) := \Set{ x \in \mathbb{R}^2 | f(\bm{x}) = \bm{x}} \subset \mathbb{R}^2
+  \Fix(f) := \Set{ x \in \mathbb{R}^2 | f(\bm{x}) = \bm{x}} \subset \mathbb{R}^2
 \]
 が平面上でどのような図形になるかを考えよう．
 \[
   f(\bm{x}) = \bm{x} \Leftrightarrow A\bm{x} + \bm{b} = \bm{x} \Leftrightarrow (E-A)\bm{x} = \bm{b}
 \]
-であるから，$\Inv(f)$ は $2$ 変数連立1次方程式 $(E-A)\bm{x} = \bm{b}$
-の解全体のなす集合である．従って，$\Inv(f)$ は空集合，$1$ 点集合，直線，
+であるから，$\Fix(f)$ は $2$ 変数連立1次方程式 $(E-A)\bm{x} = \bm{b}$
+の解全体のなす集合である．従って，$\Fix(f)$ は空集合，$1$ 点集合，直線，
 平面全体のいずれかである．特に，$f$ が恒等変換のとき，またそのときに限
-り，$\Inv(f)=\mathbb{R}^2$ となる．すなわち，
+り，$\Fix(f)=\mathbb{R}^2$ となる．すなわち，
 \[
   A=E \text{ かつ } \bm{b} = \bm{0} \Leftrightarrow f =
-  \id_{\mathbb{R}^2} \Leftrightarrow \Inv(f) = \mathbb{R}^2
+  \id_{\mathbb{R}^2} \Leftrightarrow \Fix(f) = \mathbb{R}^2
 \]
 である．また，
 \[
-  A=E \text{ かつ } \bm{b} \neq \bm{0} \Rightarrow \Inv(f) = \emptyset
+  A=E \text{ かつ } \bm{b} \neq \bm{0} \Rightarrow \Fix(f) = \emptyset
 \]
 である．すなわち，$\bm{0}$ でないベクトル $\bm{b}$ による平行移
 動 $t_{\bm{b}}$ は固定点を持たない．
 
 $A$ が $1$ を固有値に持たないとき，$\det(E-A) \neq 0$ だから $E-A$ は正
 則である．従って，このとき連立 $1$ 次方程式 $(E-A)\bm{x} = \bm{b}$ は唯
-一つの解 $\bm{x} = (E-A)^{-1}\bm{b}$ を持つから，$\Inv(f)$ は $1$ 点集
+一つの解 $\bm{x} = (E-A)^{-1}\bm{b}$ を持つから，$\Fix(f)$ は $1$ 点集
 合である．すなわち，以下が成り立つ．
 \[
-  \text{ $1$ は $A$ の固有値でない } \Rightarrow \Inv(f) =
+  \text{ $1$ は $A$ の固有値でない } \Rightarrow \Fix(f) =
   \Set{(E-A)^{-1}\bm{b}}
 \]
 
@@ -382,12 +382,12 @@ $A$ が $1$ を固有値に持つとき，その固有空間 $V_A(1)$ は同次�
 を用いて$\bm{x} = \bm{x}_0 + \bm{x}_1 \; (\bm{x}_1 \in V_A(1))$ と書け
 る．すなわち，
 \[
-  \text{ $1$ が $A$ の固有値かつ } \Inv(f) \neq \emptyset \Rightarrow
-  \Inv(f) = \Set{\bm{x}_0 +  \bm{x}_1 | \bm{x}_1 \in V_A(1)}
+  \text{ $1$ が $A$ の固有値かつ } \Fix(f) \neq \emptyset \Rightarrow
+  \Fix(f) = \Set{\bm{x}_0 +  \bm{x}_1 | \bm{x}_1 \in V_A(1)}
 \]
-である．特に，$\dim V_A(1) = 1$ なら $\Inv(f)$ は $\bm{x}_0$ を通
+である．特に，$\dim V_A(1) = 1$ なら $\Fix(f)$ は $\bm{x}_0$ を通
 り $V_A(1)$ に平行直線である．なお，連立 $1$ 次方程
-式 $(E-A)\bm{x}=\bm{b}$ が解を持たければ，$\Inv(f)$ は空集合である．
+式 $(E-A)\bm{x}=\bm{b}$ が解を持たければ，$\Fix(f)$ は空集合である．
 
 
 \subsection{平面の直交変換}
@@ -511,7 +511,7 @@ $A = S_{\theta} \in SO(2) \; (S_{\theta} \neq E)$ とする．このとき $f$ �
 $S_{\theta}$ は $1$ を固有値に持たないので，$\det(E-S_{\theta}) \neq
 0$ である．従って，$E-S_{\theta}$ は正則なので
 \[
-  \bm{x} \in \Inv(f) \Leftrightarrow S_{\theta} \bm{x} +\bm{b} =
+  \bm{x} \in \Fix(f) \Leftrightarrow S_{\theta} \bm{x} +\bm{b} =
   \bm{x} \Leftrightarrow (E-S_{\theta})\bm{x} = \bm{b} \Leftrightarrow
   \bm{x} = \left( E-S_{\theta}\right)^{-1} \bm{b}
 \]
@@ -541,9 +541,9 @@ $S_{\theta}$ は $1$ を固有値に持たないので，$\det(E-S_{\theta}) \ne
 
 $A=R_{\theta} \in O(2) \setminus SO(2)$
 とする．このとき，$\bm{b} \in
-V_{\theta}(-1)$ なら $\Inv(f)$ は $\bm{b}/2$ を通り $V_{\theta}(1)$ に
+V_{\theta}(-1)$ なら $\Fix(f)$ は $\bm{b}/2$ を通り $V_{\theta}(1)$ に
 平行な直線であり，$f$ はこの直線に関する鏡映である．一方，$\bm{b}
-\notin V_{\theta}(-1)$ なら $\Inv(f)$ は空集合であり，$f$ は滑り鏡映で
+\notin V_{\theta}(-1)$ なら $\Fix(f)$ は空集合であり，$f$ は滑り鏡映で
 ある．これを実際に確かめていこう．
 
 直交変換 $r_{\theta}$ による平面の固有空間分解
@@ -552,7 +552,7 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \begin{equation}\label{eq:eigendecomp2}
   \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} \in V_{\theta}(1), \; \bm{b}^{-} \in V_{\theta}(-1)
 \end{equation}
-と分解する．ここで，$\Inv(f) \neq \emptyset$ とすると，$x \in \Inv(f)$
+と分解する．ここで，$\Fix(f) \neq \emptyset$ とすると，$x \in \Fix(f)$
 に対して $f(\bm{x}) = {x}$ なので
 \begin{equation}\label{eq:xinInv}
   R_{\theta}x +\bm{b}^{+} + \bm{b}^{-} = \bm{x}
@@ -570,19 +570,19 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
   f\left(\frac{\bm{b}}{2}\right) = R_{\theta}\left(\frac{b}{2}\right) + \bm{b}
   = -\frac{\bm{b}}{2}+\bm{b} = \frac{\bm{b}}{2}
 \end{equation}
-より，$\bm{b}/2 \in \Inv(f)$ だから $\Inv(f) \neq \emptyset$ である．以上から，
+より，$\bm{b}/2 \in \Fix(f)$ だから $\Fix(f) \neq \emptyset$ である．以上から，
 \[
-  \Inv(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_{\theta}(-1)
+  \Fix(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_{\theta}(-1)
 \]
 である．これにより，$\bm{b} \in V_{\theta}(-1)$ かそうでないかによって合
 同変換 $f$ を分けることができる．
 
 
-初めに，$\bm{b} \in V_{\theta}(-1)$ とする．このとき $\Inv(f)$ は直線
-で，$f$ がこの直線 $\Inv(f)$ に関する鏡映であることを確かめよう．
+初めに，$\bm{b} \in V_{\theta}(-1)$ とする．このとき $\Fix(f)$ は直線
+で，$f$ がこの直線 $\Fix(f)$ に関する鏡映であることを確かめよう．
 
 ま
-ず，$\Inv(f)$ が直線となることを確かめておく．$\Inv(f)$ が空集合でない
+ず，$\Fix(f)$ が直線となることを確かめておく．$\Fix(f)$ が空集合でない
 ので，連立 $1$ 次方程式
 \[
   (E-R_{\theta})\bm{x} = \bm{b}
@@ -590,20 +590,20 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 は解を持つ．$R_{\theta}$ は $1$ を固有値に持つので $\det
 (E-R_{\theta}) = 0$ であり，$E-R_{\theta} \neq O$ だか
 ら，$\rank(E-R_{\theta})=1$ である．従って，$\dim V_{\theta}(1)=1$ なの
-で \ref{sec:inv2}節で見たように $\Inv(f)$ は直線である．特に，(\ref{eq:halfinInv})
-より $\bm{b}/2 \in \Inv(f)$ だから $\Inv(f)$ は $\bm{b}/2$ を通る．さら
-に，任意の $\bm{x} \in \Inv(f)$ に対して，
+で \ref{sec:inv2}節で見たように $\Fix(f)$ は直線である．特に，(\ref{eq:halfinInv})
+より $\bm{b}/2 \in \Fix(f)$ だから $\Fix(f)$ は $\bm{b}/2$ を通る．さら
+に，任意の $\bm{x} \in \Fix(f)$ に対して，
 \[
   (\bm{x}, \bm{b}) = (R_{\theta}\bm{x}, R_{\theta}\bm{b}) =
   (\bm{x}-\bm{b}, -\bm{b}) = -(\bm{x},\bm{b})+\|\bm{b}\|^2
 \]
 より $(\bm{x}, \bm{b}) = \|\bm{b}\|^2/2$
 が成り立つから$\left( \bm{x}-\frac{\bm{b}}{2}, \bm{b}\right) =0$ とな
-り，$\Inv(f)$ と $\bm{b}$ は直交する．つま
-り，$\Inv(f)$ は $V_{\theta}(-1)^{\perp}=V_{\theta}(1)$ に平行
+り，$\Fix(f)$ と $\bm{b}$ は直交する．つま
+り，$\Fix(f)$ は $V_{\theta}(-1)^{\perp}=V_{\theta}(1)$ に平行
 で $\bm{b}/2$ を通る直線である．
 
-次に，実際に $f$ が直線 $\Inv(f)$ に関する鏡映であることを確かめる．任
+次に，実際に $f$ が直線 $\Fix(f)$ に関する鏡映であることを確かめる．任
 意の $\bm{x} \in \mathbb{R}^2$ と任意の $\bm{p} \in V_{\theta}(1)$ に対
 して，
 \begin{align*}
@@ -617,17 +617,17 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
   =\frac{R_{\theta}\bm{x}+\bm{b} + \bm{x}}{2} = \frac{f(\bm{x})+\bm{x}}{2}
 \end{align*}
 であるから，$f(\bm{x})-\bm{x}$ が $V_{\theta}(1)$ に，従っ
-て $\Inv(f)$に，直交し，$f(\bm{x})$ と $\bm{x}$ の中点が $\Inv(f)$ 上に
-あるので，$f$ は確かに直線 $\Inv(f)$ に関する鏡映である（
+て $\Fix(f)$に，直交し，$f(\bm{x})$ と $\bm{x}$ の中点が $\Fix(f)$ 上に
+あるので，$f$ は確かに直線 $\Fix(f)$ に関する鏡映である（
 図\ref{fig:reflection2gen}）．
 \begin{figure}[h]
   \centering
   \includegraphics[height=5cm]{pictures/reflection2gen.pdf}
-  \caption{直線 $\Inv(f)$ に関する鏡映}
+  \caption{直線 $\Fix(f)$ に関する鏡映}
   \label{fig:reflection2gen}
 \end{figure}
 
-なお，任意の $\bm{c} \in \Inv(f)$ に対して
+なお，任意の $\bm{c} \in \Fix(f)$ に対して
 \[
   f(\bm{x}) =  R_{\theta}\left( \bm{x} - \bm{c}\right) + \bm{c}
 \]
@@ -667,8 +667,8 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \]
 である．$g(\bm{x}) = R_{\theta}\bm{x}+\bm{b}^{-}$
 とおくと，$f= t_{\bm{b}^{+}} \circ g$ である．$\bm{b}^{-} \in
-V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．ま
-た，$\bm{b}^{+} \in V_{\theta}(1)$ より $\bm{b}^{+}$ は $\Inv(g)$ と平
+V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．ま
+た，$\bm{b}^{+} \in V_{\theta}(1)$ より $\bm{b}^{+}$ は $\Fix(g)$ と平
 行である．よって，$f$ は $\bm{b}^{-}/2$ を通り $V_A(1)$ に平行な直線と
 ベクトル $\bm{b}^{+}$ に関する滑り鏡映である（図\ref{fig:glide2}）．
  \begin{figure}[h]
@@ -742,10 +742,10 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
 % \begin{proof}
 %   $\bm{p}_0, \bm{p}_1, \bm{p}_2 \in \mathbb{R}^2$ は一般の位置にあると
 %   し，平面の合同変換 $f$ は $\bm{p}_0, \bm{p}_1, \bm{p}_2$ を固定すると
-%   する．このとき，$\bm{p}_0, \bm{p}_1, \bm{p}_2 \in \Inv(f)$ だか
-%   ら $\Inv(f)$ 空でも $1$ 点集合でもない．さらに，$\bm{p}_0, \bm{p}_1,
-%   \bm{p}_2$ は同一直線上にないから $\Inv(f)$ は直線でもない．よっ
-%   て，\ref{sec:inv2}節で見たように $\Inv(f)=\mathbb{R}^2$ であるか
+%   する．このとき，$\bm{p}_0, \bm{p}_1, \bm{p}_2 \in \Fix(f)$ だか
+%   ら $\Fix(f)$ 空でも $1$ 点集合でもない．さらに，$\bm{p}_0, \bm{p}_1,
+%   \bm{p}_2$ は同一直線上にないから $\Fix(f)$ は直線でもない．よっ
+%   て，\ref{sec:inv2}節で見たように $\Fix(f)=\mathbb{R}^2$ であるか
 %   ら $f$ は恒等変換である．
 % \end{proof}
 
@@ -884,7 +884,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Inv(g)$ に関する鏡映である．
   g_1$ は
   $\bm{c}:=(E-S_{\phi-\theta})^{-1}\left(R_{\phi}\bm{b}_1+\bm{b}_2\right)$
   を中心とする $\phi-\theta$ 回転である．鏡映軸 $L_1, L_2$ の交点
-  を $\bm{c}' \in L_1 \cap L_2$ とすると，$\bm{c}' \in \Inv(g_2 \circ
+  を $\bm{c}' \in L_1 \cap L_2$ とすると，$\bm{c}' \in \Fix(g_2 \circ
   g_1)$ である．回転の固定点は中心点だけなので $\bm{c}'=\bm{c}$ である．
   また，図\ref{fig:rotation2refgen}のように回転方向は $L_1$ から $L_2$
   の方へ，回転角 $\phi-\theta$ は $L_1$ と $L_2$ のなす角の $2$ 倍である．
@@ -1197,34 +1197,34 @@ $f$ を空間 $\mathbb{R}^3$ の合同変換とする．定理\ref{thm:affine_re
 
 $f(\bm{x}) = \bm{x}$ を満たす $\bm{x} \in \mathbb{R}^3$ を $f$ の固定点という．$f$ の固定点集合
 \[
-  \Inv(f) := \Set{\bm{x} \in \mathbb{R}^3 | f(\bm{x}) = \bm{x}}
+  \Fix(f) := \Set{\bm{x} \in \mathbb{R}^3 | f(\bm{x}) = \bm{x}}
 \]
 が空間 $\mathbb{R}^3$ の中でどのような図形になるかを考えよう．
 \[
   f(\bm{x}) = \bm{x} \Leftrightarrow A\bm{x} + \bm{b} = \bm{x}
   \Leftrightarrow (E-A)\bm{x} = \bm{b}
 \]
-であるから，$\Inv(f)$ は $3$ 変数連立 $1$ 次方程
-式 $(E-A)\bm{x}=\bm{b}$ の解全体のなす集合である．従って，$\Inv(f)$ は
+であるから，$\Fix(f)$ は $3$ 変数連立 $1$ 次方程
+式 $(E-A)\bm{x}=\bm{b}$ の解全体のなす集合である．従って，$\Fix(f)$ は
 空集合，$1$ 点集合，直線，平面，空間全体のいずれかである．特に，$f$ が
-恒等変換のとき，またそのときに限り，$\Inv(f) = \mathbb{R}^3$ となる．すなわち，
+恒等変換のとき，またそのときに限り，$\Fix(f) = \mathbb{R}^3$ となる．すなわち，
 \[
   A=E \text{ かつ } \bm{b} = \bm{0} \Leftrightarrow f =
-  \id_{\mathbb{R}^3} \Leftrightarrow \Inv(f) = \mathbb{R}^3
+  \id_{\mathbb{R}^3} \Leftrightarrow \Fix(f) = \mathbb{R}^3
 \]
 である．また，
 \[
-  A=E \text{ かつ } \bm{b} \neq \bm{0} \Rightarrow \Inv(f) = \emptyset
+  A=E \text{ かつ } \bm{b} \neq \bm{0} \Rightarrow \Fix(f) = \emptyset
 \]
 である．すなわち，$\bm{0}$ でないベクトル $\bm{b}$ による平行移
 動 $t_{\bm{b}}$ は固定点を持たない．
 
 $A$ が $1$ を固有値に持たないとき，$\det(E-A) \neq 0$ だから $E-A$ は正
 則である．従って，このとき連立 $1$ 次方程式 $(E-A)\bm{x}=\bm{b}$ は唯一
-つの解 $\bm{x} = (E-A)^{-1}\bm{b}$ を持つので，$\Inv(f)$ は $1$ 点集合
+つの解 $\bm{x} = (E-A)^{-1}\bm{b}$ を持つので，$\Fix(f)$ は $1$ 点集合
 である．すなわち，以下が成り立つ．
 \[
-  \text{ $1$ は $A$ の固有値でない } \Rightarrow \Inv(f) =
+  \text{ $1$ は $A$ の固有値でない } \Rightarrow \Fix(f) =
   \Set{(E-A)^{-1}\bm{b}}
 \]
 
@@ -1235,14 +1235,14 @@ $A$ が $1$ を固有値に持つとき，その固有空間 $V_A(1)$ は同次�
 を用いて$\bm{x} = \bm{x}_0 + \bm{x}_1 \; (\bm{x}_1 \in V_A(1))$ と書け
 る．すなわち，
 \[
-  \text{$1$ が $A$ の固有値かつ } \Inv(f) \neq \emptyset \Rightarrow
-  \Inv(f) = \Set{ \bm{x}_0 + \bm{x}_1 | \bm{x}_1 \in V_A(1)}
+  \text{$1$ が $A$ の固有値かつ } \Fix(f) \neq \emptyset \Rightarrow
+  \Fix(f) = \Set{ \bm{x}_0 + \bm{x}_1 | \bm{x}_1 \in V_A(1)}
 \]
-である．特に，$\dim V_A(1) = 2$ なら $\Inv(f)$ は $\bm{x}_0$ を通
+である．特に，$\dim V_A(1) = 2$ なら $\Fix(f)$ は $\bm{x}_0$ を通
 り $V_A(1)$ に平行な平面であり，$\dim
-V_A(1)=1$ なら $\Inv(f)$ は $\bm{x}_0$ を通り $V_A(1)$ に平行な直線であ
+V_A(1)=1$ なら $\Fix(f)$ は $\bm{x}_0$ を通り $V_A(1)$ に平行な直線であ
 る．なお，連立 $1$ 次方程式 $(E-A)\bm{x} = \bm{b}$ が解を持たなけれ
-ば，$\Inv(f)$ は空集合である．
+ば，$\Fix(f)$ は空集合である．
 
 \subsection{空間の直交変換}
 
@@ -1506,14 +1506,14 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
   の詳細は次の通りである．
   \begin{enumerate}[(1)]
   \item $\bm{b} \in V_A(1)^{\perp}$ のと
-    き：固定点集合 $\Inv(f)$ は $V_A(1)=\langle \bm{p}_3\rangle$ に平行な直線であ
+    き：固定点集合 $\Fix(f)$ は $V_A(1)=\langle \bm{p}_3\rangle$ に平行な直線であ
     り，$f$ はこの直線を軸とする回転角 $\theta$ の回転である．
     
   \item $\bm{b} \not\in V_A(1)^{\perp}$ のとき： $f$ は固定点を持な
     い．$f$ は回転 $g(\bm{x}) = A\bm{x} +
     \bm{b}-(\bm{b},\bm{p}_3)\bm{p}_3$ の軸とベクトル
     $(\bm{b}, \bm{p}_3)\bm{p}$ による平行移動に関する角 $\theta$ の螺
-    旋運動である．このとき，$g$ の回転軸 $\Inv(g)$ は $V_A(1)=\langle
+    旋運動である．このとき，$g$ の回転軸 $\Fix(g)$ は $V_A(1)=\langle
     \bm{p}_3 \rangle$ に平行である．
   \end{enumerate}
   ただし，いずれも回転の向きは $\bm{p}_3$ の方向に進む右ねじの回転方向
@@ -1526,7 +1526,7 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
 分かれる．つまり，次が成り立つ．
 
 \begin{lemma}\label{lem:RotOrSpiral3}
-  上の状況において，$\Inv(f)$ は $\bm{b} \in V_A(1)^{\perp}$ のとき，そ
+  上の状況において，$\Fix(f)$ は $\bm{b} \in V_A(1)^{\perp}$ のとき，そ
   のときに限り，空集合でない．
 \end{lemma}
 
@@ -1547,10 +1547,10 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
   \]
   であるから，$g(\mathbb{R}^3) = V_A(1)^{\perp}$ である．よっ
   て，$\bm{b} = g(\bm{c}) = \bm{c} - A\bm{c}$ となる
-  $\bm{c} \in \mathbb{R}^3$ が存在する．すなわち，$\bm{c} \in \Inv(f)$
-  なので $\Inv(f)$ は空集合でない．
+  $\bm{c} \in \mathbb{R}^3$ が存在する．すなわち，$\bm{c} \in \Fix(f)$
+  なので $\Fix(f)$ は空集合でない．
 
-  逆に，$\Inv(f)$ が空集合でないとする．任意の $\bm{x} \in \Inv(f)$ に対し
+  逆に，$\Fix(f)$ が空集合でないとする．任意の $\bm{x} \in \Fix(f)$ に対し
   て， $\bm{b} = \bm{x} - A\bm{x}$ だから
   \[
     (\bm{b}, \bm{p}_3) = (\bm{x},\bm{p}_3) - (A\bm{x}, \bm{p}_3)
@@ -1564,14 +1564,14 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
 
   \begin{enumerate}[(1)]
   \item $\bm{b} \in V_A(1)^{\perp}$ とする．補
-    題\ref{lem:RotOrSpiral3}より $\Inv(f)$ は空集合でない．さら
+    題\ref{lem:RotOrSpiral3}より $\Fix(f)$ は空集合でない．さら
     に，$\dim V_A(1)=1$ なので\ref{sec:inv3}節で見たよう
-    に $\Inv(f)$ は $V_A(1)$ と平行な直線である．このとき，任意
-    の $\bm{c} \in \Inv(f)$ と任意の $\bm{x} \in \mathbb{R}^3$ に対して
+    に $\Fix(f)$ は $V_A(1)$ と平行な直線である．このとき，任意
+    の $\bm{c} \in \Fix(f)$ と任意の $\bm{x} \in \mathbb{R}^3$ に対して
     \[
       f(\bm{x}) - \bm{c} = A(\bm{x}-\bm{c})
     \]
-    である．よって，$f$ は $V_A(1)$ に平行な直線 $\Inv(f)$ を軸とする回
+    である．よって，$f$ は $V_A(1)$ に平行な直線 $\Fix(f)$ を軸とする回
     転角 $\theta$ の回転である（図\ref{fig:rotation3gen}）．ただし，回
     転の向きは $\bm{p}_3$ の方向に進む右ねじの回転方向を正とする．また，
     これより
@@ -1579,13 +1579,13 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
       f= t_{\bm{c}} \circ T_A \circ t_{-\bm{c}} 
     \]
     とも表せる．すなわち，$\bm{c}$ を通る直線 $L$ を軸とする回転は「一
-    旦 $-\bm{c}$ 平行移動し，原点を通り $\Inv(f)$ に平行な直線を軸とし
+    旦 $-\bm{c}$ 平行移動し，原点を通り $\Fix(f)$ に平行な直線を軸とし
     て回転させた後に再び $\bm{c}$ 平行移動する変換」とも言い換えるられ
     る．
     \begin{figure}[h]
       \centering
       \includegraphics[height=4.5cm]{pictures/rotation3gen.pdf}
-           \caption{直線 $\Inv(f)$ を軸とする角度 $\theta$ の回転}
+           \caption{直線 $\Fix(f)$ を軸とする角度 $\theta$ の回転}
       \label{fig:rotation3gen}
     \end{figure}
 
@@ -1603,8 +1603,8 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
     \]
     より $f$ は合同変換 $g(\bm{x}) = A\bm{x} + \bm{b}_{12}$ と平行移
     動 $t_{\bm{b}_3}$ の合成 $t_{\bm{b}_{3}} \circ g$ である（
-    図\ref{fig:spiral3}）．(1)より $g$ は直線 $\Inv(g)$ を軸とす
-    る $\theta$ 回転であり，$\bm{b}_3 (\neq \bm{0})$ は $\Inv(g)$ と平
+    図\ref{fig:spiral3}）．(1)より $g$ は直線 $\Fix(g)$ を軸とす
+    る $\theta$ 回転であり，$\bm{b}_3 (\neq \bm{0})$ は $\Fix(g)$ と平
     行だから，$f$ は螺旋運動である．また，$(\bm{p}_1, \bm{p}_2,
     \bm{p}_3)$ は $\mathbb{R}^3$ の正規直交基底だから
     \[
@@ -1621,7 +1621,7 @@ $A \sim S_{\theta}$ かつ $A \neq E$ とする．このとき，$f$ は回転�
     \begin{figure}[h]
       \centering
       \includegraphics[height=4.5cm]{pictures/spiral3.pdf}
-      \caption{$\Inv(g)$ と $\bm{b}_3$ に関する螺旋運動}
+      \caption{$\Fix(g)$ と $\bm{b}_3$ に関する螺旋運動}
       \label{fig:spiral3}
     \end{figure}
   \end{enumerate}
@@ -1664,7 +1664,7 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
   の詳細は次の通りである．
   \begin{enumerate}[(1)]
   \item $\bm{b} \in V_A(-1)$ のとき：固定点集
-    合 $\Inv(f)$ は $\bm{b}/2$ を通り $V_A(1)$ に平行な平面であり，$f$
+    合 $\Fix(f)$ は $\bm{b}/2$ を通り $V_A(1)$ に平行な平面であり，$f$
     はこの平面に関する鏡映である．
 
   \item $\bm{b} \not\in V_A(-1)$ のとき：$f$ は固定点を持たない．$f$ は
@@ -1681,7 +1681,7 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
 る．つまり，次が成り立つ．
 
 \begin{lemma}\label{lem:RefOrGlide3}
-  上の状況において，$\Inv(f)$ は $\bm{b} \in V_A(-1)$ のとき，そのとき
+  上の状況において，$\Fix(f)$ は $\bm{b} \in V_A(-1)$ のとき，そのとき
   に限り，空集合でない．
 \end{lemma}
 
@@ -1693,13 +1693,13 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
 \]
 と分解する．$A^2= PR_0^2P^{-1}=E$ だから，
 \[
-  \bm{x} \in \Inv(f) \Leftrightarrow A\bm{x} + \bm{b}^{+}+ \bm{b}^{-} = \bm{x} \Leftrightarrow
+  \bm{x} \in \Fix(f) \Leftrightarrow A\bm{x} + \bm{b}^{+}+ \bm{b}^{-} = \bm{x} \Leftrightarrow
   \bm{x} + \bm{b}^{+}-\bm{b}^{-}=A\bm{x} \Leftrightarrow
   \bm{b}^{+} = \bm{0}
 \]
 である．よって，
 \[
-  \Inv(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_A(-1)
+  \Fix(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_A(-1)
 \]
 である．
 \end{proof}
@@ -1708,15 +1708,15 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
   
   \begin{enumerate}[(1)]
   \item $\bm{b} \in V_A(-1)$ とする．補
-    題\ref{lem:RefOrGlide3}より $\Inv(f)$は空集合でない．$\dim
+    題\ref{lem:RefOrGlide3}より $\Fix(f)$は空集合でない．$\dim
     V_A(1)=2$ なので\ref{sec:inv3}節で見たよう
-    に $\Inv(f)$ は $V_A(1)$ と平行な平面である．特に，
+    に $\Fix(f)$ は $V_A(1)$ と平行な平面である．特に，
     \[
       f\left(\frac{\bm{b}}{2}\right) = A\left(\frac{\bm{b}}{2}\right)
       + \bm{b} = -\frac{\bm{b}}{2} + \bm{b} = \frac{\bm{b}}{2}
     \]
-    より，$\bm{b}/2 \in \Inv(f)$ だから $\Inv(f)$ は $\bm{b}/2$ を通
-    る．$f$ は平面 $\Inv(f)$ に関する鏡映である．実際，任意の $\bm{x}
+    より，$\bm{b}/2 \in \Fix(f)$ だから $\Fix(f)$ は $\bm{b}/2$ を通
+    る．$f$ は平面 $\Fix(f)$ に関する鏡映である．実際，任意の $\bm{x}
     \in \mathbb{R}^3$ と任意の $\bm{p} \in V_A(1)$ に対して，
     \begin{align*}
       \left(f(\bm{x})-\bm{x}, \bm{p}\right) &= (A\bm{x}, \bm{p}) + (\bm{b},\bm{p}) - (\bm{x},\bm{p})
@@ -1725,13 +1725,13 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
       = \frac{\bm{x}-\bm{b}+A\bm{x}}{2} + \bm{b} 
       = \frac{A\bm{x}+\bm{b}+\bm{x}}{2} = \frac{f(\bm{x})+\bm{x}}{2}
     \end{align*}
-    であるから，$f(\bm{x})-\bm{x}$ が $V_A(1)$ に，従って $\Inv(f)$ に，
-    直交し，$f(\bm{x})$ と $\bm{x}$ の中点が $\Inv(f)$ 上にあるの
-    で，$f$ は平面 $\Inv(f)$ に関する鏡映である．
+    であるから，$f(\bm{x})-\bm{x}$ が $V_A(1)$ に，従って $\Fix(f)$ に，
+    直交し，$f(\bm{x})$ と $\bm{x}$ の中点が $\Fix(f)$ 上にあるの
+    で，$f$ は平面 $\Fix(f)$ に関する鏡映である．
 
 
 
-    また，任意の $\bm{c} \in \Inv(f)$ と任意
+    また，任意の $\bm{c} \in \Fix(f)$ と任意
     の $\bm{x} \in \mathbb{R}^3$ に対し
     \[
       f(\bm{x}) = A(\bm{x}-\bm{c}) + \bm{c}
@@ -1757,8 +1757,8 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
     であるから，$g(\bm{x}) = A\bm{x} + \bm{b}^{-}$
     とおくと，$f = t_{\bm{b}^{+}} \circ g$ であ
     る．(1)より $g$ は $\bm{b}^{-}$ を通り $V_A(1)$ に平行な平
-    面 $\Inv(g)$ に関する鏡映である．さらに，$\bm{b}^{+} \in V_A(1)$ で
-    あるから $\bm{b}^{+}$ は $\Inv(g)$ に平行である．よって，$f$ は滑り
+    面 $\Fix(g)$ に関する鏡映である．さらに，$\bm{b}^{+} \in V_A(1)$ で
+    あるから $\bm{b}^{+}$ は $\Fix(g)$ に平行である．よって，$f$ は滑り
     鏡映である．また，$(\bm{p}_1, \bm{p}_2,
     \bm{p}_3)$ は $\mathbb{R}^3$ の正規直交基底だから
     \[
@@ -1843,20 +1843,20 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
 
 
 まず，$B \sim S_{\theta} \neq E$ かつ $\bm{b}_{2} \in V_B(1)^{\perp}$
-だから，定理\ref{thm:RotOrSpiral3}より $\Inv(g)$ は $V_B(1)=V_A(-1)$ に
+だから，定理\ref{thm:RotOrSpiral3}より $\Fix(g)$ は $V_B(1)=V_A(-1)$ に
 平行な直線で，$g$ はこの直線に関する $\theta$ 回転である．ただし，回転
 の向きは $\bm{p}_3$ の向きに進む右ねじの回転方向を正とする．
 
 次に，$C \sim R_0$ かつ $\bm{b}_1 \in V_B(1)=V_C(-1)$ だから，定
-理\ref{thm:RefOrGlide3}より $\Inv(h)$ は $V_C(1)=V_A(-1)^{\perp}$ に平
+理\ref{thm:RefOrGlide3}より $\Fix(h)$ は $V_C(1)=V_A(-1)^{\perp}$ に平
 行な平面で，$h$ はこの平面に関する鏡映である．
 
 最後に，$A$ は $1$ を固有値に持たないので\ref{sec:inv3}節で見たよう
 に $f$ の固定点は $\bm{c}:=(E-A)^{-1}\bm{b}$ のみであるが，これ
-は $\Inv(g)$ と $\Inv(h)$ の交点である．実際，空間 $\mathbb{R}^3$ の中
-で直線 $\Inv(g)$ と平面 $\Inv(h)$ は直交するので $1$ 点で交わるが，その
+は $\Fix(g)$ と $\Fix(h)$ の交点である．実際，空間 $\mathbb{R}^3$ の中
+で直線 $\Fix(g)$ と平面 $\Fix(h)$ は直交するので $1$ 点で交わるが，その
 交点は $g, h$ の固定点なので $f$ の固定点でもあり，従って，$\bm{c}$ に
-等しい．よって，$\Inv(g)$ も $\Inv(h)$ も $\bm{c}$ を通る．
+等しい．よって，$\Fix(g)$ も $\Fix(h)$ も $\bm{c}$ を通る．
 \end{proof}
 
 
@@ -1875,17 +1875,17 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
 
 \begin{lemma}\label{lem:inv-comp3}
   空間 $\mathbb{R}^3$ の任意の合同変換 $f_1,
-  f_2$に対し，$ \Inv(f_1) \cap \Inv(f_2) \subset \Inv(f_1 \circ f_2)$
-  が成り立つ．特に，$\Inv(f_1 \circ f_2)$ が空集合なら $\Inv(f_1) \cap
-  \Inv(f_2)$ は空集合である．
+  f_2$に対し，$ \Fix(f_1) \cap \Fix(f_2) \subset \Fix(f_1 \circ f_2)$
+  が成り立つ．特に，$\Fix(f_1 \circ f_2)$ が空集合なら $\Fix(f_1) \cap
+  \Fix(f_2)$ は空集合である．
 \end{lemma}
 
 \begin{proof}
-  任意の $\bm{c} \in \Inv(f_1) \cap \Inv(f_2)$ に対して，以下が成り立つので $\bm{c} \in \Inv(f_1 \circ f_2)$ である．
+  任意の $\bm{c} \in \Fix(f_1) \cap \Fix(f_2)$ に対して，以下が成り立つので $\bm{c} \in \Fix(f_1 \circ f_2)$ である．
   \[
     f_1 \circ f_2(\bm{c}) = f_1\left( f_2(\bm{c})\right) = f_1(\bm{c}) = \bm{c}
   \]
-  よって，$\Inv(f_1) \cap \Inv(f_2) \subset \Inv(f_1 \circ f_2)$ である．
+  よって，$\Fix(f_1) \cap \Fix(f_2) \subset \Fix(f_1 \circ f_2)$ である．
   後半の主張は明らかである．
 \end{proof}
 
@@ -1955,7 +1955,7 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   % る．$\bm{b} \in \langle \bm{p}_3 \rangle = V_A(-1)$ より，定
   % 理\ref{thm:RefOrGlide3}から合同変
   % 換 $g(\bm{x})=A\bm{x}+\bm{b}$ は $\bm{b}/2$ を通り $V_A(1)$ に平行な
-  % 平面 $H:=\Inv(g)$ に関する鏡映である．よって，
+  % 平面 $H:=\Fix(g)$ に関する鏡映である．よって，
   % \[
   %   t_{\bm{b}}(\bm{x}) = \bm{x} + \bm{b} = A\left( A\bm{x} \right) +
   %   \bm{b} = g\left( T_A(\bm{x})\right)
@@ -2023,12 +2023,12 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
 \end{lemma}
 
 \begin{proof}
-  (1) 任意に $\bm{c} \in \Inv(f)$ をとる．$f$ は $A \sim S_{\theta}$ と
+  (1) 任意に $\bm{c} \in \Fix(f)$ をとる．$f$ は $A \sim S_{\theta}$ と
   なる直交行列 $A \in SO(3)$ によって
   \[
     f(\bm{x}) = A(\bm{x} - \bm{c}) + \bm{c}
   \]
-  と書ける．$f$ の回転軸 $\Inv(f)$ は直線 $V_A(1)$ に平行である．そこ
+  と書ける．$f$ の回転軸 $\Fix(f)$ は直線 $V_A(1)$ に平行である．そこ
   で，$f$ の回転の正の方向に回転する右ねじの進む方向の単位ベクトル
   を $\bm{p}_3$ とすと，$\bm{p}_3 \in V_A(1)$
   である．$\bm{p}_1, \bm{p}_2 \in V_A(1)^{\perp}$ を
@@ -2043,31 +2043,31 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   \]
   である．$g_2$ を $\bm{c}+\bm{p}_1$ と $f(\bm{c}+\bm{p}_1)$ の垂直二等
   分面 $H_2$ に関する鏡映とし，$g_1 = g_2 \circ f$
-  とする．$\Inv(f) \subset H_2 = \Inv(g_2)$ だから補
+  とする．$\Fix(f) \subset H_2 = \Fix(g_2)$ だから補
   題\ref{lem:inv-comp3}より
   \[
-    \Inv(f) = \Inv(g_2) \cap \Inv(f) \subset \Inv(g_2 \circ f) = \Inv(g_1)
+    \Fix(f) = \Fix(g_2) \cap \Fix(f) \subset \Fix(g_2 \circ f) = \Fix(g_1)
   \]
-  である．さらに，$\bm{p}_1$ は $\Inv(f)$ に直交し，
+  である．さらに，$\bm{p}_1$ は $\Fix(f)$ に直交し，
   \[
     g_1 (\bm{c}+\bm{p}_1) = g_2 \left( f(\bm{c}+\bm{p}_1)\right) = \bm{c}+\bm{p}_1
   \]
-  より $\bm{c}+\bm{p}_1 \in \Inv(g_1)$ であるか
-  ら，$\Inv(g_1)$ は $\Inv(f)$ を含み $\bm{p}_1$ に平行な平面，すなわ
+  より $\bm{c}+\bm{p}_1 \in \Fix(g_1)$ であるか
+  ら，$\Fix(g_1)$ は $\Fix(f)$ を含み $\bm{p}_1$ に平行な平面，すなわ
   ち，$\bm{c}$ を通り $\bm{p}_2$ に直交する平面 $H_1$ を含む．一方，
   図\ref{fig:cutplane3}から
   \[
     g_1(\bm{c} + \bm{p}_2) = g_2 \left( f(\bm{c}+\bm{p}_2) \right) = c-\bm{p}_2 \neq c+\bm{p}_2
-  \]より $c+\bm{p}_2 \notin \Inv(g_1)$ である．従って，
-  $\Inv(g_1) \neq \mathbb{R}^3$ であるから \ref{sec:inv3}節で見たよう
-  に $\Inv(g_1)$ は平面 $H_1$ である．分類表\ref{tab:classification3}か
+  \]より $c+\bm{p}_2 \notin \Fix(g_1)$ である．従って，
+  $\Fix(g_1) \neq \mathbb{R}^3$ であるから \ref{sec:inv3}節で見たよう
+  に $\Fix(g_1)$ は平面 $H_1$ である．分類表\ref{tab:classification3}か
   ら，固定点集合が平面となるのは鏡映であるから $g_1$ は鏡映である．よって，
   \[
     f = (g_2 \circ g_2) \circ f = g_2 \circ (g_2 \circ f) = g_2 \circ g_1
   \]
   より，$f$ は $2$ 個の鏡映 $g_1, g_2$ の合成である．また，空
-  間 $\mathbb{R}^3$ の中で$2$ 平面 $H_1, H_2$ が共に直線 $\Inv(f)$ を含
-  むので，$H_1 \cap H_2 = \Inv(f)$ である．すなわち，$2$ 平面の交線
+  間 $\mathbb{R}^3$ の中で$2$ 平面 $H_1, H_2$ が共に直線 $\Fix(f)$ を含
+  むので，$H_1 \cap H_2 = \Fix(f)$ である．すなわち，$2$ 平面の交線
   が $f$ の回転軸である．さらに，図\ref{fig:cutplane3}のように $H_1,
   H_2$ のなす角は $\theta/2$ である．
   \begin{figure}[h]
@@ -2087,17 +2087,17 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   %   そのような $g_1, g_2$ がどのようなものでなければならないかを考え
   %   よう．
 
-  %   　2つの鏡映面 $H_1:=\Inv(g_1)$ と $H_2:=\Inv(g_2)$ が平行なときは補
+  %   　2つの鏡映面 $H_1:=\Fix(g_1)$ と $H_2:=\Fix(g_2)$ が平行なときは補
   %   題\ref{lem:translation3}から $g_2 \circ g_1$ は平行移動になってしま
   %   うので，$H_1, H_2$ は平行ではない．空間の中で平行でない $2$ 平面は
   %   必ず交わり，その交点全体 $H_1 \cap H_2$ は直線をなす．今 $f=g_2
-  %   \circ g_1$ であって欲しいが，$\Inv(f)$ は直線なので補
-  %   題\ref{lem:inv-comp3}から $H_1 \cap H_2 \subset \Inv(g_2 \circ
-  %   g_1)$ より $H_1 \cap H_2 =\Inv(f)$ となる，すなわち，$2$ 平面の交線
+  %   \circ g_1$ であって欲しいが，$\Fix(f)$ は直線なので補
+  %   題\ref{lem:inv-comp3}から $H_1 \cap H_2 \subset \Fix(g_2 \circ
+  %   g_1)$ より $H_1 \cap H_2 =\Fix(f)$ となる，すなわち，$2$ 平面の交線
   %   が回転の軸になるはずである．
 
   %   　$2$ つの鏡映面のなす角を考えよう．下図のように，$f$ の回転
-  %   軸 $\Inv(f)$ に $\bm{c} \in \Inv(f)$ で直交する平面 $H_0$ 上で $f$
+  %   軸 $\Fix(f)$ に $\bm{c} \in \Fix(f)$ で直交する平面 $H_0$ 上で $f$
   %   を見ると，$f$ は $c$ を中心とした平面 $H_0$ 上での $\theta$ 回転で
   %   ある．これは，平面 $H_0$ 上では直線 $H_1 \cap H_0$ に関する鏡映と直
   %   線 $H_2 \cap H_0$ に関する鏡映の合成である．従って，定
@@ -2123,7 +2123,7 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   %     g_2(g_1(\bm{x})) = B_2 (B_1(\bm{x}-\bm{c})+\bm{c}-\bm{c})+\bm{c}= B_2 B_1(\bm{x}-\bm{c}) + \bm{c}
   %   \]
   %   である．これが $f(\bm{x})$ に等しくあって欲しいのだが，$\bm{c}
-  %   \in \Inv(f)$ でもあるので，$f(\bm{x})$ は
+  %   \in \Fix(f)$ でもあるので，$f(\bm{x})$ は
   %   \[
   %     f(\bm{x})=A(\bm{x}-\bm{c})+\bm{c}
   %   \]
@@ -2141,7 +2141,7 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   %     \]
   %     である．$g_1$ の鏡映面 $H_1$ は $\bm{c}$ を通り $V_{B_1}(1)$ に平
   %     行な平面であり，これが $\bm{c}$ を通り $\bm{p}_3$ に平行な直
-  %     線 $\Inv(f)$ を含むので，$\bm{p}_3 \in V_{B_1}(1)$ である．$H_1$
+  %     線 $\Fix(f)$ を含むので，$\bm{p}_3 \in V_{B_1}(1)$ である．$H_1$
   %     と $H_2$ のなす角は $\theta/2$ であって欲しいが，このような $2$
   %     平面の選び方は無数にある．そこで，枠外の図\ref{fig:rotation3ref}の
   %     ように $H_1$ が $\bm{p}_2$ に直交するものを選ぼう．すなわち，
@@ -2157,7 +2157,7 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   %       \right]
   %     \]
   %     とすれば，${}^{t}Q_1 B_1Q_1 = R_0$ となるはずである．そし
-  %     て，$H_2$ は $\Inv(f)$ を軸として $H_1$ を $\theta/2$ 回転させた
+  %     て，$H_2$ は $\Fix(f)$ を軸として $H_1$ を $\theta/2$ 回転させた
   %     平面のはずなので，$V_{B_2}(1), V_{B_2}(-1)$ はそれぞ
   %     れ $V_{B_1}(1), V_{B_1}(-1)$ を $\bm{p}_3$ を軸として $\theta/2$
   %     回転させた平面と直線である．$C=PS_{\theta/2}{}^{t}P$ とする
@@ -2200,14 +2200,14 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   %   \right]
   % \]
   % とし，$B_1 = Q_1 R_0 {}^{t}Q_1, \; B_2=Q_2 R_0 {}^{t}Q_2$ とす
-  % る．任意に $\bm{c} \in \Inv(f)$ をと
+  % る．任意に $\bm{c} \in \Fix(f)$ をと
   % り
   % \[
   %   g_1(\bm{x}) = B_1(x-\bm{c})+\bm{c}, \quad g_2(\bm{x})=B_2(\bm{x}-\bm{c})+\bm{c}
   % \]
   % とすると，$Q_1, Q_2 \in SO(3)$ なので，$B_1 \sim R_0 \sim
-  % B_1$ より $g_1, g_2$ はそれぞれ平面 $H_1:=\Inv(g_1)$ と平面 $
-  % H_2:=\Inv(g_2)$ に関する鏡映である．ここで，$P$ は直交行列だから
+  % B_1$ より $g_1, g_2$ はそれぞれ平面 $H_1:=\Fix(g_1)$ と平面 $
+  % H_2:=\Fix(g_2)$ に関する鏡映である．ここで，$P$ は直交行列だから
   % \begin{align*}
   %   Q_1 &=PT, \quad T:= \left[
   %   \begin{array}{ccc}
@@ -2258,9 +2258,9 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
   %   \langle T_C(\bm{p}_3), T_C(\bm{p}_1)\rangle = \langle \bm{p}_3, T_C(\bm{p}_1)\rangle
   % \]
   % より，$H_1, H_2$ は $\bm{c}$ を通り $\bm{p}_3$ に平行な直線，すなわ
-  % ち，$\Inv(f)$ を含む．空間の中で平面と平面の交わりは直線なの
-  % で，$\Inv(f) = H_1 \cap H_2$ である．よって，
-  % 図\ref{fig:rotation3ref}のように $H_1$ を直線 $\Inv(f)$ を軸とし
+  % ち，$\Fix(f)$ を含む．空間の中で平面と平面の交わりは直線なの
+  % で，$\Fix(f) = H_1 \cap H_2$ である．よって，
+  % 図\ref{fig:rotation3ref}のように $H_1$ を直線 $\Fix(f)$ を軸とし
   % て $\theta/2$ 回転させた平面が $H_2$ である．つまり，$H_1$ と $H_2$
   % のなす角は $\theta/2$ である．
 
@@ -2434,16 +2434,16 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
     &g(\bm{x})=B\bm{x} + \bm{b}_2, \quad h(\bm{x})=C\bm{x}+\bm{b}_1
   \end{align*}
   とすると $f = g \circ h$ である．このとき，$g$ は $f$ の固定
-  点 $\bm{c}$ を通り $V_A(-1)$ に平行な直線 $\Inv(g)$ を軸とす
+  点 $\bm{c}$ を通り $V_A(-1)$ に平行な直線 $\Fix(g)$ を軸とす
   る $\theta$ 回転で，$h$ は $\bm{c}$ を通り $V_A(-1)^{\perp}$ に平行な
-  平面 $H:=\Inv(h)$ に関する鏡映である．補題\ref{lem:rotation3}より回
-  転 $g$ は $\Inv(g)$ を交線とする平面 $H_1, H_2$ に関する鏡映 $r_1,
+  平面 $H:=\Fix(h)$ に関する鏡映である．補題\ref{lem:rotation3}より回
+  転 $g$ は $\Fix(g)$ を交線とする平面 $H_1, H_2$ に関する鏡映 $r_1,
   r_2$ により $g=r_2 \circ r_1$ と書ける．よって，
   \[
     f = g \circ h = r_2 \circ r_1 \circ h
   \]
   より $f$ は $3$ 個の鏡映の合成として表せる．また，補
-  題\ref{lem:inv-comp3}から $H_1 \cap H_2 \cap H = \Inv(f)=\{\bm{c}\}$
+  題\ref{lem:inv-comp3}から $H_1 \cap H_2 \cap H = \Fix(f)=\{\bm{c}\}$
   より $3$ つの鏡映面は $1$ 点 $\bm{c}$ で交わる．
   
   また，補
@@ -2769,10 +2769,10 @@ $f_1(\bm{x})=A_1 \bm{x} + \bm{b}_1, \, f_2(\bm{x}) = A_2\bm{x} +
 まず，明らかに $a=\pm 1$ である．
 
 $a=1$のとき， $b=0$ なら $f$ は恒等変換
-で $\Inv(f)=\mathbb{R}$ であり，$b\neq 0$ なら$f$ は平行移動
-で $\Inv(f)$ は空集合である．
+で $\Fix(f)=\mathbb{R}$ であり，$b\neq 0$ なら$f$ は平行移動
+で $\Fix(f)$ は空集合である．
 
-$a=-1$ のとき，$\Inv(f) = \Set{x \in \mathbb{R} | -x+b=x} = \Set{b/2}$
+$a=-1$ のとき，$\Fix(f) = \Set{x \in \mathbb{R} | -x+b=x} = \Set{b/2}$
 である．このとき，任意の $x \in \mathbb{R}$ に対して $f(x)-b/2 =
 -(x-b/2)$ であるから $f$ は $b/2$ に関する鏡映である．
 
@@ -3368,7 +3368,7 @@ $V_A(e^{-\i \theta_j})$
 \begin{definition}
   合同変換 $f \in \Isom(\mathbb{R}^n)$ に対し，
   \[
-    \Inv(f) := \Set{\bm{x} \in \mathbb{R}^n | f(\bm{x}) = \bm{x}}
+    \Fix(f) := \Set{\bm{x} \in \mathbb{R}^n | f(\bm{x}) = \bm{x}}
   \]
   を $f$ の固定点集合という．  
 \end{definition}
@@ -3377,14 +3377,14 @@ $\mathbb{R}^n$ の合同変換 $f(\bm{x}) = A\bm{x}+\bm{b}$ に対し
 \[
   f(\bm{x}) = \bm{x} \Leftrightarrow A\bm{x}+\bm{b} = \bm{x} \Leftrightarrow (E-A)\bm{x} = \bm{b}
 \]
-より，$\Inv(f)$ は $n$ 変数連立1次方程式の解空間，すなわち，アフィン部
+より，$\Fix(f)$ は $n$ 変数連立1次方程式の解空間，すなわち，アフィン部
 分空間である．特に，
 \[
-  \Inv(f) = \mathbb{R}^n \Leftrightarrow f = \id_{\mathbb{R}^n} \Leftrightarrow 
+  \Fix(f) = \mathbb{R}^n \Leftrightarrow f = \id_{\mathbb{R}^n} \Leftrightarrow 
   A=E \text{ かつ }\bm{b}=\bm{0}
 \]
 である．また，$\bm{0}$ でない任意の $\bm{b} \in \mathbb{R}^n$ に対
-し，$\Inv \left (t_{\bm{b}} \right)$ は空集合である．
+し，$\Fix \left (t_{\bm{b}} \right)$ は空集合である．
 
 \begin{definition}
   $\mathbb{R}^n$ の空でないアフィン部分空間 $V_1, V_2 \; (\dim V_1 \geq \dim V_2)$ に対し，
@@ -3399,20 +3399,20 @@ $\mathbb{R}^n$ の合同変換 $f(\bm{x}) = A\bm{x}+\bm{b}$ に対し
 
 \begin{theorem}\label{thm:diminv}
   $\mathbb{R}^n$ の合同変換 $f(\bm{x}) = A\bm{x} + \bm{b}$ の固定点集
-  合 $\Inv(f)$ が空集合でないとき，$\Inv(f)$ は $\dim V_A(1)$ に平行
-  で $\dim \Inv(f) = \dim V_A(1)$ である．
+  合 $\Fix(f)$ が空集合でないとき，$\Fix(f)$ は $\dim V_A(1)$ に平行
+  で $\dim \Fix(f) = \dim V_A(1)$ である．
 \end{theorem}
 
 \begin{proof}
   連立1次方程式の理論から
   \[
-    \dim \Inv(f) = \dim \mathbb{R}^n  - \rank(E-A) = n - \left( n - \dim V_A(1)\right) = \dim V_A(1)
+    \dim \Fix(f) = \dim \mathbb{R}^n  - \rank(E-A) = n - \left( n - \dim V_A(1)\right) = \dim V_A(1)
   \]
-  である．任意に $\bm{x}_0 \in \Inv(f)$ をとる．任意の $\bm{x} \in
-  \Inv(f)$ に対して $A(\bm{x} - \bm{x}_0) = \bm{x} -\bm{x}_0$ だか
+  である．任意に $\bm{x}_0 \in \Fix(f)$ をとる．任意の $\bm{x} \in
+  \Fix(f)$ に対して $A(\bm{x} - \bm{x}_0) = \bm{x} -\bm{x}_0$ だか
   ら $\bm{x} - \bm{x}_0 \in V_A(1)$ より
-  $\Inv(f) \subset \bm{x}_0 + V_A(1)$ である．従っ
-  て，$\Inv(f)$ と $V_A(1)$ は平行である．
+  $\Fix(f) \subset \bm{x}_0 + V_A(1)$ である．従っ
+  て，$\Fix(f)$ と $V_A(1)$ は平行である．
 \end{proof}
 
 \subsection{鏡映と超平面}\label{sec:reflection}
@@ -3422,7 +3422,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
 
 \begin{definition}
   $\mathbb{R}^n$ の超平面を固定点集合に持つ合同変換，すなわち，$\dim
-  \Inv(f)=n-1$ となる $f \in \Isom(\mathbb{R}^n)$ を鏡映という．定
+  \Fix(f)=n-1$ となる $f \in \Isom(\mathbb{R}^n)$ を鏡映という．定
   理\ref{thm:ref-hyperplane}で示すように，$\mathbb{R}^n$ の鏡映全体
   と $\mathbb{R}^n$ の超平面全体とは1対1に対応するから，超平面 $H$ を固
   定点集合とする鏡映のことを $H$ に関する鏡映と呼ぶ．
@@ -3432,7 +3432,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
 \begin{theorem}\label{thm:refconcrete}
   $\mathbb{R}^n$ の合同変換 $f(\bm{x}) = A\bm{x} + \bm{b}$ は $A \sim
   R_0$ かつ $\bm{b} \in V_A(-1)$ であるとき，またそのときに限り，鏡映で
-  ある．このとき $\Inv(f)$ は $\bm{b}/2$ を通り $V_A(1)$ に平行な超平面
+  ある．このとき $\Fix(f)$ は $\bm{b}/2$ を通り $V_A(1)$ に平行な超平面
   である．
 \end{theorem}
 
@@ -3443,13 +3443,13 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
     f\left( \frac{\bm{b}}{2}\right) = \frac{1}{2} A \bm{b} + \bm{b} 
     =-\frac{\bm{b}}{2} + \bm{b} =\frac{\bm{b}}{2} 
   \]
-  より $\bm{b}/2 \in \Inv(f)$ であるから， $\Inv(f)$ は空集合でない．よっ
-  て，定理\ref{thm:diminv}から $\dim \Inv(f) = \dim V_A(1) =
+  より $\bm{b}/2 \in \Fix(f)$ であるから， $\Fix(f)$ は空集合でない．よっ
+  て，定理\ref{thm:diminv}から $\dim \Fix(f) = \dim V_A(1) =
   n-1$ より $f$ は $\mathbb{R}^n$ の鏡映である．
 
   逆に，$f(\bm{x}) = A\bm{x} + \bm{b}$ を鏡映とする．まず
   $A \sim
-  R_0$を示す．定理\ref{thm:diminv}より$\dim V_A(1) = \dim \Inv(f) =
+  R_0$を示す．定理\ref{thm:diminv}より$\dim V_A(1) = \dim \Fix(f) =
   n-1$ だから $A$ は $1$ を固有値に持ち，その重複度は $n-1$ 以上である．
   定理\ref{thm:eigen-conj}より残りの固有値は実数なので $1$ か $-1$ であ
   り，定理\ref{thm:stdform}から $A \sim E$ または $A \sim R_0$ であ
@@ -3460,7 +3460,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
   \[
     \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} \in V_A(1), \; \bm{b}^{-} \in V_A(-1)
   \]
-  とする．$\bm{x} \in \Inv(f)$ に対して
+  とする．$\bm{x} \in \Fix(f)$ に対して
   \[
     A\bm{x} + \bm{b}^{+} + \bm{b}^{-} = \bm{x}
   \]
@@ -3471,7 +3471,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
   を得る．さらにこの2式を連立して $\bm{b}^{+} = \bm{0}$ を得る．従っ
   て，$\bm{b} \in V_A(-1)$ である．
 
-  後半の主張は $\bm{b}/2 \in \Inv(f)$ であることと定
+  後半の主張は $\bm{b}/2 \in \Fix(f)$ であることと定
   理\ref{thm:diminv}から従う．
 \end{proof}
 
@@ -3494,7 +3494,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
 
 \begin{theorem}\label{thm:ref_is_sym}
   $\mathbb{R}^n$ の鏡映 $f$ に対して以下が成り立つ．ただ
-  し，$H=\Inv(f)$ とする．
+  し，$H=\Fix(f)$ とする．
   \begin{enumerate}[(1)]
   \item 任意の $\bm{x} \in \mathbb{R}^n$ に対し
     て $f(\bm{x})$ と $\bm{x}$ の中点は $H$ 上にある．
@@ -3514,7 +3514,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
       A\left(\frac{A\bm{x}+\bm{b}+\bm{x}}{2}\right)+\bm{b}
       =\frac{A\bm{x} + \bm{b} + \bm{x}}{2} = \frac{f(\bm{x})+\bm{x}}{2}
     \]
-    より $\left(f(\bm{x})+\bm{x}\right)/2 \in \Inv(f)$ である．
+    より $\left(f(\bm{x})+\bm{x}\right)/2 \in \Fix(f)$ である．
     
   \item 定理\ref{thm:eigen-perp}から，$\bm{p} \in V_A(1)$ に対し
     て $(\bm{b}, \bm{p})=0$ である．従って，任意の $\bm{x} \in
@@ -3524,7 +3524,7 @@ $R_0 := \diag(1, \ldots, 1, -1)$ とする．合同変換群の生成元であ�
       =(A\bm{x}, A\bm{p}) - (A\bm{x}, A\bm{p}) = 0
     \]
     より $f(\bm{x})-\bm{x}$ は $V_A(1)$ と直交する．よって，定
-    理\ref{thm:diminv}より $H=\Inv(f)$ とも直交する．
+    理\ref{thm:diminv}より $H=\Fix(f)$ とも直交する．
   \end{enumerate}
 \end{proof}
 
@@ -3573,16 +3573,16 @@ $H$ を$\mathbb{R}^n$ の超平面とする．$H$ の方程式を $(\bm{a}, \bm{
     = \|\bm{x}-\bm{y}\|^2 = d(\bm{x}, \bm{y})^2
   \]
   より $f$ は $\mathbb{R}^n$ の合同変換である．また，任意の $\bm{x}
-  \in H$ に対して $f(\bm{x}) = \bm{x}$ であるから $H \subset \Inv(f)$
-  より $\dim \Inv(f) \geq \dim H = n-1$
-  である．さらに，$(d+1)\bm{a}/(\bm{a}, \bm{a}) \notin \Inv(f)$ より $\Inv(f) \neq
-  \mathbb{R}^n$ であるから $\dim \Inv(f) \leq n-1$ である．従っ
-  て，$\dim\Inv(f) = n-1$ より $\Inv(f) = H$ であるから $f$ は $H$ を固
+  \in H$ に対して $f(\bm{x}) = \bm{x}$ であるから $H \subset \Fix(f)$
+  より $\dim \Fix(f) \geq \dim H = n-1$
+  である．さらに，$(d+1)\bm{a}/(\bm{a}, \bm{a}) \notin \Fix(f)$ より $\Fix(f) \neq
+  \mathbb{R}^n$ であるから $\dim \Fix(f) \leq n-1$ である．従っ
+  て，$\dim\Fix(f) = n-1$ より $\Fix(f) = H$ であるから $f$ は $H$ を固
   定点集合とする鏡映である．
 \end{proof}
 
-$\mathbb{R}^n$ の鏡映 $f$ から超平面 $\Inv(f)$ が定まり，逆に超平
-面 $H$ から $H=\Inv(f)$ となる鏡映 $f$ が定まることが分かった．この対応
+$\mathbb{R}^n$ の鏡映 $f$ から超平面 $\Fix(f)$ が定まり，逆に超平
+面 $H$ から $H=\Fix(f)$ となる鏡映 $f$ が定まることが分かった．この対応
 は1対1である．すなわち，次が成り立つ．
 
 \begin{theorem}\label{thm:ref-hyperplane}
@@ -3608,7 +3608,7 @@ $\mathbb{R}^n$ の鏡映 $f$ から超平面 $\Inv(f)$ が定まり，逆に超�
     V_A(-1) = V_A(1)^{\perp} = V_B(1)^{\perp} = V_B(-1)
   \]
   である．定理\ref{thm:refconcrete}から $\bm{b} \in
-  V_A(-1) = V_B(-1)$ かつ $\bm{b}/2 \in \Inv(f_1) = H = \Inv(f_2)$ であるから
+  V_A(-1) = V_B(-1)$ かつ $\bm{b}/2 \in \Fix(f_1) = H = \Fix(f_2)$ であるから
   \[
     \frac{\bm{b}}{2} = f_2\left( \frac{\bm{b}}{2}\right) = \frac{1}{2} B \bm{b} + \bm{c} 
     = -\frac{\bm{b}}{2} + \bm{c} 
@@ -3687,7 +3687,7 @@ $\mathbb{R}^n$ の鏡映 $f$ から超平面 $\Inv(f)$ が定まり，逆に超�
 \begin{proof}
   $f(\bm{x}) = A\bm{x} + \bm{b}$ を滑り鏡映とする．定
   理\ref{thm:glide}より $A \sim R_0$ かつ $\bm{b} \notin V_A(-1)$ であ
-  る．$\Inv(f)$ が空集合でないとすると，定理\ref{thm:refconcrete}の証明
+  る．$\Fix(f)$ が空集合でないとすると，定理\ref{thm:refconcrete}の証明
   後半と同様にして $\bm{b} \in V_A(-1)$ となることが示せるが，これ
   は $\bm{b} \notin V_A(-1)$ に矛盾する．
 \end{proof}
