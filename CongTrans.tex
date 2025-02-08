@@ -277,9 +277,10 @@ $(\bm{x}, \bm{y}) = {}^{t}\bm{x} \bm{y}$ によって内積を定める．さら
   の $\bm{x}, \bm{y} \in \mathbb{R}^n$ に対して
   \begin{align*}
     \left(f(\bm{x}), f(\bm{y})\right)
-    &= \frac{1}{2}\left(\left\|f(\bm{x})-f(\bm{y})\right\|^2-\left\|f(\bm{x})\right\|^2
-      -\left\|f(\bm{y})\right\|^2\right)\\
-    &=\frac{1}{2}\left(\left\|\bm{x}-\bm{y}\right\|^2-\left\|\bm{x}\right\|^2-\left\|\bm{y}\right\|^2\right)
+    &= \frac{1}{2}\left( \left\|f(\bm{x})\right\|^2+\left\|f(\bm{y})\right\|^2- \left\|f(\bm{x})-f(\bm{y})\right\|^2\right)\\
+    &=\frac{1}{2}\left( \|\bm{x}\|^2 + \|\bm{y}\|^2 - d\left(f(\bm{x}), f(\bm{y})\right)^2\right)
+      =\frac{1}{2}\left( \left\|\bm{x}\right|^2 + \left\|\bm{y}\right\|^2 - d\left(\bm{x},\bm{y}\right)^2\right)\\
+    & =\frac{1}{2}\left(\left\|\bm{x}\right\|^2+\left\|\bm{y}\right\|^2 - \left\|\bm{x}-\bm{y}\right\|^2\right)
       = \left(\bm{x}, \bm{y}\right)
   \end{align*}
   が成り立つので，$f$ は内積を保つ．以上から，任意の $\bm{x}, \bm{y}
@@ -316,8 +317,8 @@ $(\bm{x}, \bm{y}) = {}^{t}\bm{x} \bm{y}$ によって内積を定める．さら
 \begin{proof}
   $f$ を $\mathbb{R}^n$ の任意の合同変換とする．$f(\bm{0})=\bm{b}$ とお
   く．定理\ref{thm:trans-orth}(1)と定
-  理\ref{thm:comp_isom}よりベクトル $-f(\bm{0})$ による平行移
-  動 $t_{-f(\bm{0})}$ と $f$ の合成 $g = t_{-\bm{b}} \circ
+  理\ref{thm:comp_isom}よりベクトル $-\bm{b}$ による平行移
+  動 $t_{-\bm{b}}$ と $f$ の合成 $g = t_{-\bm{b}} \circ
   f$ は $\mathbb{R}^n$ の合同変換である．$g(\bm{0})=\bm{0}$ なので，定
   理\ref{thm:prev0}より $g$は直交変換である．従って，ある $n$ 次直交行
   列 $A$
