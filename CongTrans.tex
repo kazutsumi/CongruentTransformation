@@ -97,13 +97,17 @@
 \begin{itemize}
   \setlength{\itemsep}{1zh}
 
+\item $\mathbb{R}^n$ を $n$ 次実列ベクトルのなす実線形空間とする．
+
+\item 行列 $A$ の転置行列を ${}^{t}A$ で表す．
+  
 \item $\mathbb{R}^n$ の標準内積を $\cdot$ で表す．つまり，$\bm{x} \cdot \bm{y} = {}^{t}\bm{x} \bm{y}$ である．
 
 \item $\mathbb{R}^n$ の標準内積から定まるノルムを $\| \; \|$ で表す．つ
   まり，$\|\bm{x}\| = \sqrt{\bm{x}\cdot \bm{x}}$ である．
 
 \item 線形空間 $\mathbb{R}^n$ のゼロベクトルを $\bm{0}$ と書き，これを $\mathbb{R}^n$ の原点と
-  も呼ぶ．次元を明示したいときは $\bm{0}_n$ と書く．
+  も呼ぶ．
   
 \item 線形空間の基底は順序付きの組として $(\bm{e}_1, \bm{e}_2, \ldots
   , \bm{e}_n)$ のように書く．例えば，$\mathbb{R}^3$
@@ -118,10 +122,11 @@
   す．
 \item $\mathbb{R}^n$ の部分線形空間 $V$ の直交補空間を $V^{\perp}$ で表す：
   \[
-    V^{\perp} := \Set{\bm{x} \in \mathbb{R}^n | \text{ 任意の } \bm{y} \in V \text{ に対して } (\bm{x}, \bm{y}) = 0}
+    V^{\perp} := \Set{\bm{x} \in \mathbb{R}^n | \text{ 任意の } \bm{y}
+      \in V \text{ に対して } \bm{x}\cdot \bm{y}= 0}
   \]
 
-\item 対角成分が順に $a_1, \ldots, a_n$ である対角行列
+\item 対角成分が左上から順に $a_1, \ldots, a_n$ である対角行列
   を $\diag(a_1, \ldots, a_n)$ で表す：
   \[
     \diag(a_1, a_2, \ldots, a_n) := \left[
@@ -133,8 +138,6 @@
     \right]
   \]
 
-  
-\item 行列 $A$ の転置行列を ${}^{t}A$ で表す．
 
 \item 直交行列 $A,B$ が向きを保って同じ標準形に標準化されることを$ A \sim B$ で表す．
   \[
@@ -152,7 +155,7 @@
 
 本節では $n$ を任意の自然数とするが，次節以降では $n$ を $2,3,1$ に固定する．
 
-$\mathbb{R}^n$ を $n$ 次元列ベクトルのなす実線形空間とする．ま
+$\mathbb{R}^n$ を $n$ 次実列ベクトルのなす実線形空間とする．ま
 た，$\bm{x}, \bm{y} \in
 \mathbb{R}^n$に対して$\bm{x} \cdot \bm{y} := {}^{t}\bm{x} \bm{y}$ によっ
 て内積を定める．さらに，$\| \bm{x}\| := \sqrt{\bm{x} \cdot \bm{x}}$ に
@@ -443,21 +446,21 @@ R_{\theta}=-1$ であり，直交行列の行列式は $\pm 1$ だから，
   \right]
 \]
 より，$R_{\theta}$ は $S_{\frac{\theta}{2}}$ により直交対角化されることがわかる．これより（あるいは直接的な計算により）
-$R_{\theta}$ の固有値は $1, -1$ で，各々の固有空間 $V_{\theta}(1), V_{\theta}(-1)$ は互いに直交し，
+$R_{\theta}$ の固有値は $1, -1$ で，各々の固有空間 $V_{R_{\theta}}(1), V_{R_{\theta}}(-1)$ は互いに直交し，
 \[
-  V_{\theta}(1) = \left\langle \left[
+  V_{R_{\theta}}(1) = \left\langle \left[
     \begin{array}{r}
       \cos (\theta/2)\\
       \sin (\theta/2)
     \end{array}
-  \right]\right\rangle, \quad V_{\theta}(-1)= \left\langle \left[
+  \right]\right\rangle, \quad V_{R_{\theta}}(-1)= \left\langle \left[
     \begin{array}{r}
       -\sin (\theta/2)\\
       \cos (\theta/2)
     \end{array}
   \right]\right\rangle
 \] 
-であることもわかる．なお，$V_{\theta}(1)$ が鏡映の軸である．ま
+であることもわかる．なお，$V_{R_{\theta}}(1)$ が鏡映の軸である．ま
 た，$S_0, S_{\pi}$ 以外の $S_{\theta}$ は実固有値を持たない．
 
 
@@ -480,8 +483,8 @@ $R_{\theta}$ の固有値は $1, -1$ で，各々の固有空間 $V_{\theta}(1),
     恒等変換 & $E$ & $\bm{0}$ & $0$ & $\mathbb{R}^2$ \\
     平行移動 & $E$ & $\bm{b} \neq \bm{0}$ & $2$ & 空集合\\
     回転 & $S_{\theta} (\neq E$) & $\bm{b} \in \mathbb{R}^2$ & $2$ & 回転の中心\\
-    鏡映 & $R_{\theta}$ & $\bm{b} \in V_{\theta}(-1)$ & $1$ & 鏡映軸  \\
-    滑り鏡映 & $R_{\theta}$ & $\bm{b} \notin V_{\theta}(-1)$ & $3$ & 空集合\\ \hline
+    鏡映 & $R_{\theta}$ & $\bm{b} \in V_{R_{\theta}}(-1)$ & $1$ & 鏡映軸  \\
+    滑り鏡映 & $R_{\theta}$ & $\bm{b} \notin V_{R_{\theta}}(-1)$ & $3$ & 空集合\\ \hline
   \end{tabular}
   \caption{平面 $\mathbb{R}^2$ の合同変換の分類表}
   \label{tab:classification2}
@@ -493,7 +496,7 @@ $R_{\theta}$ の固有値は $1, -1$ で，各々の固有空間 $V_{\theta}(1),
 てであることを確かめていこう．恒等変換と平行移動に関しては明らかなので，
 以下 $f$ は恒等変換でも平行移動でもない，すなわち，$A \neq E$ とする．
 また，直交行列 $S_{\theta}, R_{\theta}$ に対応する直交変換をそれぞ
-れ $s_{\theta}, r_{\theta}$ と表す．
+れ $s_{\theta}, r_{\theta}$ で表す．
 
 \subsubsection{回転}\label{sec:rotation2}
 
@@ -534,16 +537,16 @@ $S_{\theta}$ は $1$ を固有値に持たないので，$\det(E-S_{\theta}) \ne
 
 $A=R_{\theta} \in O(2) \setminus SO(2)$
 とする．このとき，$\bm{b} \in
-V_{\theta}(-1)$ なら $\Fix(f)$ は $\bm{b}/2$ を通り $V_{\theta}(1)$ に
+V_{R_{\theta}}(-1)$ なら $\Fix(f)$ は $\bm{b}/2$ を通り $V_{R_{\theta}}(1)$ に
 平行な直線であり，$f$ はこの直線に関する鏡映である．一方，$\bm{b}
-\notin V_{\theta}(-1)$ なら $\Fix(f)$ は空集合であり，$f$ は滑り鏡映で
+\notin V_{R_{\theta}}(-1)$ なら $\Fix(f)$ は空集合であり，$f$ は滑り鏡映で
 ある．これを実際に確かめていこう．
 
-直交変換 $r_{\theta}$ による平面の固有空間分解
-$\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
+直交行列 $R_{\theta}$ による固有空間分解
+$\mathbb{R}^2 = V_{R_{\theta}}(1) \oplus V_{R_{\theta}}(-1)$ によって $\bm{b}$
 を
 \begin{equation}\label{eq:eigendecomp2}
-  \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} \in V_{\theta}(1), \; \bm{b}^{-} \in V_{\theta}(-1)
+  \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} \in V_{R_{\theta}}(1), \; \bm{b}^{-} \in V_{R_{\theta}}(-1)
 \end{equation}
 と分解する．ここで，$\Fix(f) \neq \emptyset$ とすると，$x \in \Fix(f)$
 に対して $f(\bm{x}) = {x}$ なので
@@ -556,8 +559,8 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
   \bm{x}+\bm{b}^{+}-\bm{b}^{-}=R_{\theta}\bm{x} 
 \end{equation}
 が得られる．これら (\ref{eq:xinInv}) と (\ref{eq:RxinInv}) から $b^{+}
-= \bm{0}$ より，$\bm{b} \in V_{\theta}(-1)$
-である．逆に，$\bm{b} \in V_{\theta}(-1)$ とすると，$R_{\theta}\bm{b}
+= \bm{0}$ より，$\bm{b} \in V_{R_{\theta}}(-1)$
+である．逆に，$\bm{b} \in V_{R_{\theta}}(-1)$ とすると，$R_{\theta}\bm{b}
 = -\bm{b}$ なので
 \begin{equation}\label{eq:halfinInv}
   f\left(\frac{\bm{b}}{2}\right) = R_{\theta}\left(\frac{b}{2}\right) + \bm{b}
@@ -565,13 +568,13 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \end{equation}
 より，$\bm{b}/2 \in \Fix(f)$ だから $\Fix(f) \neq \emptyset$ である．以上から，
 \[
-  \Fix(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_{\theta}(-1)
+  \Fix(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_{R_{\theta}}(-1)
 \]
-である．これにより，$\bm{b} \in V_{\theta}(-1)$ かそうでないかによって合
+である．これにより，$\bm{b} \in V_{R_{\theta}}(-1)$ かそうでないかによって合
 同変換 $f$ を分けることができる．
 
 
-初めに，$\bm{b} \in V_{\theta}(-1)$ とする．このとき $\Fix(f)$ は直線
+初めに，$\bm{b} \in V_{R_{\theta}}(-1)$ とする．このとき $\Fix(f)$ は直線
 で，$f$ がこの直線 $\Fix(f)$ に関する鏡映であることを確かめよう．
 
 ま
@@ -582,7 +585,7 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \]
 は解を持つ．$R_{\theta}$ は $1$ を固有値に持つので $\det
 (E-R_{\theta}) = 0$ であり，$E-R_{\theta} \neq O$ だか
-ら，$\rank(E-R_{\theta})=1$ である．従って，$\dim V_{\theta}(1)=1$ なの
+ら，$\rank(E-R_{\theta})=1$ である．従って，$\dim V_{R_{\theta}}(1)=1$ なの
 で \ref{sec:inv2}節で見たように $\Fix(f)$ は直線である．特に，(\ref{eq:halfinInv})
 より $\bm{b}/2 \in \Fix(f)$ だから $\Fix(f)$ は $\bm{b}/2$ を通る．さら
 に，任意の $\bm{x} \in \Fix(f)$ に対して，
@@ -593,11 +596,11 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 より $(\bm{x}, \bm{b}) = \|\bm{b}\|^2/2$
 が成り立つから$\left( \bm{x}-\bm{b}/2\right) \cdot  \bm{b}=0$ とな
 り，$\Fix(f)$ と $\bm{b}$ は直交する．つま
-り，$\Fix(f)$ は $V_{\theta}(-1)^{\perp}=V_{\theta}(1)$ に平行
+り，$\Fix(f)$ は $V_{R_{\theta}}(-1)^{\perp}=V_{R_{\theta}}(1)$ に平行
 で $\bm{b}/2$ を通る直線である．
 
 次に，実際に $f$ が直線 $\Fix(f)$ に関する鏡映であることを確かめる．任
-意の $\bm{x} \in \mathbb{R}^2$ と任意の $\bm{p} \in V_{\theta}(1)$ に対
+意の $\bm{x} \in \mathbb{R}^2$ と任意の $\bm{p} \in V_{R_{\theta}}(1)$ に対
 して，
 \begin{align*}
   \left( f\left(\bm{x}\right) - \bm{x}\right) \cdot  \bm{p}
@@ -610,7 +613,7 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
     =\frac{\bm{x}-\bm{b}+R_{\theta}\bm{x}}{2} + \bm{b}
     =\frac{R_{\theta}\bm{x}+\bm{b} + \bm{x}}{2} = \frac{f(\bm{x})+\bm{x}}{2}
 \end{align*}
-であるから，$f(\bm{x})-\bm{x}$ が $V_{\theta}(1)$ に，従っ
+であるから，$f(\bm{x})-\bm{x}$ が $V_{R_{\theta}}(1)$ に，従っ
 て $\Fix(f)$に，直交し，$f(\bm{x})$ と $\bm{x}$ の中点が $\Fix(f)$ 上に
 あるので，$f$ は確かに直線 $\Fix(f)$ に関する鏡映である（
 図\ref{fig:reflection2gen}）．
@@ -629,19 +632,19 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \[
   f = t_{\bm{c}} \circ r_{\theta} \circ t_{-\bm{c}}
 \]
-である．すなわち，$\bm{c}$ を通り $V_{\theta}(1)$ に平行な直線に関する
-鏡映は「一旦 $-\bm{c}$ 平行移動し，$V_{\theta}(1)$ に関する鏡映移動をし
+である．すなわち，$\bm{c}$ を通り $V_{R_{\theta}}(1)$ に平行な直線に関する
+鏡映は「一旦 $-\bm{c}$ 平行移動し，$V_{R_{\theta}}(1)$ に関する鏡映移動をし
 た後に再び $\bm{c}$ 平行移動する変換」と言い換えることもできる（
 図\ref{fig:reflection2gen2}）．
 \begin{figure}[h]
   \centering
   \includegraphics[height=5cm]{pictures/reflection2gen2.pdf}
-  \caption{$\bm{c}$ を通り $V_{\theta}(1)$ に平行な直線に関する鏡映}
+  \caption{$\bm{c}$ を通り $V_{R_{\theta}}(1)$ に平行な直線に関する鏡映}
   \label{fig:reflection2gen2}
 \end{figure}
 
 
-続いて，$\bm{b} \notin V_{\theta}(-1)$ とする．このとき $f$ は滑り鏡映で
+続いて，$\bm{b} \notin V_{R_{\theta}}(-1)$ とする．このとき $f$ は滑り鏡映で
 あることを確かめよう．なお，平面上の滑り鏡映の定義は次の通りである．
 
 \begin{definition}
@@ -653,15 +656,15 @@ $\mathbb{R}^2 = V_{\theta}(1) \oplus V_{\theta}(-1)$ によって $\bm{b}$
 \end{definition}
 
 
-今 $\bm{b} \notin V_{\theta}(-1)$ としているので，$\bm{b}$ を式 (\ref{eq:eigendecomp2})のように分解する
+今 $\bm{b} \notin V_{R_{\theta}}(-1)$ としているので，$\bm{b}$ を式 (\ref{eq:eigendecomp2})のように分解する
 と $\bm{b}^{+} \neq \bm{0}$ である．従って，
 \[
   f(\bm{x}) = \left(R_{\theta}\bm{x} + \bm{b}^{-}\right) + \bm{b}^{+}
 \]
 である．$g(\bm{x}) = R_{\theta}\bm{x}+\bm{b}^{-}$
 とおくと，$f= t_{\bm{b}^{+}} \circ g$ である．$\bm{b}^{-} \in
-V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．ま
-た，$\bm{b}^{+} \in V_{\theta}(1)$ より $\bm{b}^{+}$ は $\Fix(g)$ と平
+V_{R_{\theta}}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．ま
+た，$\bm{b}^{+} \in V_{R_{\theta}}(1)$ より $\bm{b}^{+}$ は $\Fix(g)$ と平
 行である．よって，$f$ は $\bm{b}^{-}/2$ を通り $V_A(1)$ に平行な直線と
 ベクトル $\bm{b}^{+}$ に関する滑り鏡映である（図\ref{fig:glide2}）．
  \begin{figure}[h]
@@ -686,12 +689,12 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
        \cos(\theta/2)\\
        \sin(\theta/2)
      \end{array}
-   \right] \in V_{\theta}(1), \quad \bm{p}^{-}_{\theta} = \left[
+   \right] \in V_{R_{\theta}}(1), \quad \bm{p}^{-}_{\theta} = \left[
      \begin{array}{r}
        -\sin(\theta/2)\\
        \cos(\theta/2)
      \end{array}
-   \right] \in V_{\theta}(-1)
+   \right] \in V_{R_{\theta}}(-1)
  \]
  と名前を付ける．$\left(\bm{p}_{\theta}^{+}, \bm{p}_{\theta}^{-}\right)$ は $\mathbb{R}^2$ の
  正規直交基底だから式(\ref{eq:eigendecomp2})における $\bm{b}^{+},
@@ -705,13 +708,13 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
  \begin{itemize}
    \setlength{\itemsep}{1zh}
  \item $\bm{b} \cdot \bm{p}_{\theta}^{+}=0$ のと
-   き，$f$ は $\bm{b}/2$ を通り $V_{\theta}(1)$ に平行な直線に関する鏡
+   き，$f$ は $\bm{b}/2$ を通り $V_{R_{\theta}}(1)$ に平行な直線に関する鏡
    映である．
    
  \item $\bm{b} \cdot  \bm{p}_{\theta}^{+} \neq 0$ のと
    き，$f$ は
    $\left(\bm{b} \cdot \bm{p}_{\theta}^{-}\right)\bm{p}_{\theta}^{-}/2$ を通
-   り $V_{\theta}(1)$ に平行な直線とベクト
+   り $V_{R_{\theta}}(1)$ に平行な直線とベクト
    ル $(\bm{b}\cdot \bm{p}_{\theta}^{+})\bm{p}_{\theta}^{+}$ に関する滑り鏡
    映である．
  \end{itemize}
@@ -776,9 +779,9 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
 \end{lemma}
 
 \begin{proof}
-  (1) $\bm{b} \in V_{\theta}(-1)$ となる $\theta \in \mathbb{R}$ をとる．
+  (1) $\bm{b} \in V_{R_{\theta}}(-1)$ となる $\theta \in \mathbb{R}$ をとる．
   このとき，合同変換 $g(\bm{x})=R_{\theta}\bm{x}+\bm{b}$ は $\bm{b}/2$
-  を通り $V_{\theta}(1)$ を通る直線 $L$ に関する鏡映である．従って，任
+  を通り $V_{R_{\theta}}(1)$ を通る直線 $L$ に関する鏡映である．従って，任
   意の $\bm{x} \in \mathbb{R}^2$ に対して
   \[
     g\left(r_{\theta}(\bm{x})\right) =
@@ -787,7 +790,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
   \]
   であるから $t_{\bm{b}}$ は $2$ 個の鏡映の合成 $g \circ r_{\theta}$ で
   ある．また，図\ref{fig:translation2}のように $g, r_{\theta}$ の鏡映
-  軸 $L, V_{\theta}(1)$ はそれぞれ $\bm{b}/2, \bm{0}$ を通り共
+  軸 $L, V_{R_{\theta}}(1)$ はそれぞれ $\bm{b}/2, \bm{0}$ を通り共
   に $\bm{b}$ に直交し，$2$ 直線の距離は $\|\bm{b}\|/2$ である．
   \begin{figure}[h]
     \centering
@@ -802,7 +805,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
   を $\theta/2$ とすると，$L_1, L_2$ に関する鏡映 $g_1, g_2$ は
   \[
     g_1(\bm{x}) = R_{\theta} \bm{x} + \bm{b}_1, \quad  g_2(\bm{x}) =R_{\theta}\bm{x} + \bm{b}_2 
-    \quad \left( \bm{b}_1, \bm{b}_2 \in V_{\theta}(-1), \; \bm{b}_1 \neq \bm{b}_2\right)
+    \quad \left( \bm{b}_1, \bm{b}_2 \in V_{R_{\theta}}(-1), \; \bm{b}_1 \neq \bm{b}_2\right)
   \]
   と書ける．ただし，$L_1, L_2$ はそれぞれ $\bm{b}_1/2, \bm{b}_2/2$ を通
   る．これより任意の $\bm{x} \in \mathbb{R}^2$ に対して
@@ -843,7 +846,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
     \quad (\theta \neq 0)
   \]
   とすると，$g_1$ は $x$ 軸に平行で $\bm{c}$ を通る直線 $L_1$ に関する
-  鏡映であり，$g_2$ は $V_{\theta}(1)$に平行で $\bm{c}$ を通る直
+  鏡映であり，$g_2$ は $V_{R_{\theta}}(1)$に平行で $\bm{c}$ を通る直
   線 $L_2$ に関する鏡映である．このとき，任意の $\bm{x} \in
   \mathbb{R}^2$ に対して
   \begin{align*}
@@ -865,7 +868,7 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
   \phi/2$ とすると，$L_1, L_2$ に関する鏡映 $g_1, g_2$ は
   \[
     g_1(\bm{x}) = R_{\theta} \bm{x} + \bm{b}_1, \quad g_2(\bm{x}) = R_{\phi}\bm{x} + \bm{b}_2 \quad
-    \left(\bm{b}_1 \in V_{\theta}(-1), \; \bm{b}_2 \in V_{\phi}(-1) \right)
+    \left(\bm{b}_1 \in V_{R_{\theta}}(-1), \; \bm{b}_2 \in V_{\phi}(-1) \right)
   \]
   と書ける．ただし，$L_1, L_2$ はそれぞれ $\bm{b}_1/2, \bm{b}_2/2$ を通
   る．これより任意の $\bm{x} \in \mathbb{R}^2$ に対して
@@ -898,14 +901,14 @@ V_{\theta}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映である．
 \begin{proof}
   $f$ を平面 $\mathbb{R}^2$
   の滑り鏡映とする．$f(\bm{x}) = R_{\theta}\bm{x} + \bm{b} \; (\theta
-  \neq 0, \; \bm{b} \notin V_{\theta}(-1))$ と書ける．
+  \neq 0, \; \bm{b} \notin V_{R_{\theta}}(-1))$ と書ける．
   \[
     \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} \in
-    V_{\theta}(1), \quad \bm{b}^{-} \in V_{\theta}(-1),
+    V_{R_{\theta}}(1), \quad \bm{b}^{-} \in V_{R_{\theta}}(-1),
     \quad \bm{b}^{+} \neq \bm{0}
   \]
   とし，$g_1(\bm{x}) = R_{\theta} \bm{x} + \bm{b}^{-}$ とす
-  る．$g_1$ は $\bm{b}^{-}/2$ を通り $V_{\theta}(1)$ に平行な直
+  る．$g_1$ は $\bm{b}^{-}/2$ を通り $V_{R_{\theta}}(1)$ に平行な直
   線 $L_1$ に関する鏡映である．
   \[
     f(\bm{x}) = \left( R_{\theta}\bm{x} + \bm{b}^{-}\right) +
@@ -1705,9 +1708,10 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
 
   \item $\bm{b} \not\in V_A(-1)$ のとき：$f$ は固定点を持たない．$f$ は
     鏡映 $g(\bm{x})=A\bm{x} + (\bm{b}\cdot \bm{p}_3)\bm{p}_3$ とベクト
-    ル $\bm{b}-(\bm{b}\cdot \bm{p}_3)\bm{p}_3$ に関する滑り鏡映である．この
-    とき，$g$ は $(\bm{b}\cdot \bm{p}_3)\bm{p}_3/2$ を通り $V_A(1)$ に平行な
-    平面に関する鏡映である．
+    ル $\bm{b}-(\bm{b}\cdot \bm{p}_3)\bm{p}_3$ の鏡映面 $\Fix(g)$ に関
+    する滑り鏡映である．このとき，$g$ は $(\bm{b}\cdot
+    \bm{p}_3)\bm{p}_3/2$ を通り $V_A(1)$ に平行な平面に関する鏡映であ
+    る．
   \end{enumerate}
 \end{theorem}
 
@@ -1717,27 +1721,41 @@ $A \sim R_0$ とする．このとき，$f$ は鏡映か滑り鏡映である．
 る．つまり，次が成り立つ．
 
 \begin{lemma}\label{lem:RefOrGlide3}
-  上の状況において，$\Fix(f)$ は $\bm{b} \in V_A(-1)$ のとき，そのとき
-  に限り，空集合でない．
+  上の状況において，$\Fix(f) \neq \emptyset$ であることと $\bm{b} \in
+  V_A(-1)$ であることは同値である．
 \end{lemma}
 
 \begin{proof}
-  直交変換 $T_A(\bm{x}) = A\bm{x}$ による空間の固有空間分
-  解 $\mathbb{R}^3 = V_A(1) \oplus V_A(-1)$ により $\bm{b}$ を
+  直交行列 $A$ による固有空間分解 $\mathbb{R}^3 = V_A(1) \oplus V_A(-1)$ に
+  よって $\bm{b}$ を次のように分解する．
 \[
-  \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+} =  \in V_A(1), \; \bm{b}^{-}  \in V_A(-1)
+  \bm{b} = \bm{b}^{+} + \bm{b}^{-}, \quad \bm{b}^{+}   \in V_A(1), \; \bm{b}^{-}  \in V_A(-1)
 \]
-と分解する．$A^2= PR_0^2P^{-1}=E$ だから，
+
+まず，$\Fix(f) \neq \emptyset$ とする．$x \in \Fix(f)$
+に対して $f(\bm{x}) = \bm{x}$ なので
+\begin{equation}\label{eq:xinFix3}
+  A \bm{x} + \bm{b}^{+} + \bm{b}^{-} = x
+\end{equation}
+である．$A^2=PR_0^2P^{-1} = E, \; A\bm{b}^{\pm} = \pm
+\bm{b}^{\pm}$ なので，この (\ref{eq:xinFix3}) の両辺に左から $A$ を掛けて
+\begin{equation}\label{eq:AxinFix3}
+  \bm{x}  + \bm{b}^{+} - \bm{b}^{-} = A\bm{x}
+\end{equation}
+が得られる．これ
+ら (\ref{eq:xinFix3}) と (\ref{eq:AxinFix3}) から $\bm{b}^{+}=\bm{0}$
+より， $\bm{b} \in V_A(-1)$ である．
+
+逆に，$\bm{b} \in V_A(-1)$ とする．$A\bm{b} = -\bm{b}$ なので
 \[
-  \bm{x} \in \Fix(f) \Leftrightarrow A\bm{x} + \bm{b}^{+}+ \bm{b}^{-} = \bm{x} \Leftrightarrow
-  \bm{x} + \bm{b}^{+}-\bm{b}^{-}=A\bm{x} \Leftrightarrow
-  \bm{b}^{+} = \bm{0}
+  f\left(\frac{\bm{b}}{2}\right) = A\left(\frac{\bm{b}}{2}\right)
+  +\bm{b} = -\frac{\bm{b}}{2} + \bm{b} = \frac{\bm{b}}{2}
 \]
-である．よって，
-\[
-  \Fix(f) \neq \emptyset \Leftrightarrow \bm{b} \in V_A(-1)
-\]
-である．
+より， $\bm{b}/2 \in \Fix(f)$ だから $\Fix(f) \neq \emptyset$ である．
+
+
+あるいは，$V_A(-1)= V_A(1)^{\perp}$ なので補題\ref{lem:RotOrSpiral3}と
+同様の議論によって示すこともできる．
 \end{proof}
 
 \begin{proof}[定理\ref{thm:RefOrGlide3}の証明]
@@ -2524,8 +2542,6 @@ V_B(1)^{\perp}$ によって $\bm{b}$ を
 \end{proof}
 
 以上から，定理\ref{thm:generate3}の証明が完成する．
-
-\newpage
 
 \subsection{空間の合同変換と $4$ 次正方行列}
 
