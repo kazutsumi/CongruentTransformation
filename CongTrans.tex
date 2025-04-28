@@ -595,7 +595,7 @@ $\mathbb{R}^2 = V_{R_{\theta}}(1) \oplus V_{R_{\theta}}(-1)$ によって $\bm{b
   \bm{x} \cdot \bm{b} = (R_{\theta}\bm{x}) \cdot  (R_{\theta}\bm{b}) =
   (\bm{x}-\bm{b})\cdot (-\bm{b}) = -\bm{x}\cdot \bm{b}+\|\bm{b}\|^2
 \]
-より $(\bm{x}, \bm{b}) = \|\bm{b}\|^2/2$
+より $\bm{x}\cdot  \bm{b} = \|\bm{b}\|^2/2$
 が成り立つから$\left( \bm{x}-\bm{b}/2\right) \cdot  \bm{b}=0$ とな
 り，$\Fix(f)$ と $\bm{b}$ は直交する．つま
 り，$\Fix(f)$ は $V_{R_{\theta}}(-1)^{\perp}=V_{R_{\theta}}(1)$ に平行
@@ -702,8 +702,8 @@ V_{R_{\theta}}(-1)$ だから $g$ は直線 $\Fix(g)$ に関する鏡映であ�
  正規直交基底だから式(\ref{eq:eigendecomp2})における $\bm{b}^{+},
  \bm{b}^{-}$ はそれぞれ
  \[
-   \bm{b}^{+} = (\bm{b}, \bm{p}_{\theta}^{+}) \bm{p}_{\theta}^{+} ,
-   \quad  \bm{b}^{-} =  (\bm{b}, \bm{p}_{\theta}^{-})\bm{p}_{\theta}^{-}
+   \bm{b}^{+} = (\bm{b} \cdot \bm{p}_{\theta}^{+}) \bm{p}_{\theta}^{+} ,
+   \quad  \bm{b}^{-} =  (\bm{b}\cdot \bm{p}_{\theta}^{-})\bm{p}_{\theta}^{-}
  \]
  と表せる．これより，合同変換 $f(\bm{x}) = R_{\theta} \bm{x} + \bm{b}$
  は以下の2つに分けられる．
