@@ -1,5 +1,5 @@
 \documentclass[11pt, uplatex, dvipdfmx, titlepage]{jsarticle}
-\usepackage{amsthm,amsmath,amssymb, enumerate,bm,fancyhdr, braket, ascmac, graphicx}
+\usepackage{amsthm,amsmath,amssymb, enumerate,bm,fancyhdr, braket, ascmac, graphicx, url}
 \usepackage[cc]{titlepic}
 
 
@@ -82,12 +82,46 @@
 
 \section*{はじめに}
 
-平面と空間の合同変換を線形代数をふんだんに使って分類してみました．はじ
-めに合同変換を一般次元 $\mathbb{R}^n$ において定義しますが，過度に抽象
-化はせず，平面 $\mathbb{R}^2$ と空間 $\mathbb{R}^3$（ついでに直
-線 $\mathbb{R}$）の場合それぞれをできるだけ具体的に記述しました．平
-面 $\mathbb{R}^2$ と空間 $\mathbb{R}^3$ の話は別々に読めるようになって
-いるはずです．
+
+平面と空間の合同変換を線形代数をふんだんに使って分類してみました．平
+面 $\mathbb{R}^2$ と空間 $\mathbb{R}^3$ の合同変換については，例え
+ば\cite{Kawasaki}, \cite{Kouno}で説明されています．\cite{Kouno}では平面
+の合同変換の分類が紹介されていて，\cite{Kawasaki}では平面と空間の両方の
+合同変換についてそこそこ詳しく説明されています．しかしながら，いずれに
+おいても個々の合同変換が主に幾何学的に記述され，線形代数的な記述が物足
+りないと私は感じました．特に，\cite{Kouno}では線形代数的な記述を極力排
+除し，必要最低限に留めています．なんなら線形代数パートは読み飛ばしても
+いいくらいの書き方です（もしかしたら，読み飛ばせるけどどうしてもこれだ
+けは書いておきたくて少しだけ登場させているのかもしれません
+）．$\mathbb{R}^n$ の合同変換 $f$ は直交行列 $A$ とベクトル $\bm{b}$ に
+よって $f(\bm{x}) = A\bm{x} + \bm{b}$ と書けるのだから，この直交行
+列 $A$ とベクトル $\bm{b}$ の情報を使って分類されていいはずだと個人的に
+は思うのですが，なかなかそのように書かれた文献を見つけることができてい
+ません\footnote{そのような文献をご存知の方は教えて頂けるとうれしいです．}．
+それはたぶん私の探し方が悪いのだとは思いますが，文献探しに力を入れるよ
+りも自分で考えた方が楽しそうだったのでそうしてみました．それが本稿で
+す．
+
+
+平面と空間，つまり，$2$ 次元と $3$ 次元についてまとめたら，$4$ 次元以上
+ではどうなるかを考えたくなるのは自然なことで，そちらは以下の別記事にまとめました．
+\begin{center}
+  \url{https://github.com/kazutsumi/IsometoriesOnEuclidanSpaces/blob/main/Isom.pdf}
+\end{center}
+
+本稿でははじめに合同変換を一般次元 $\mathbb{R}^n$ において定義します
+が，過度に抽象化はせず，平面 $\mathbb{R}^2$ と空間 $\mathbb{R}^3$（つい
+でに直線 $\mathbb{R}$）の場合それぞれをできるだけ具体的に記述しました．
+平面 $\mathbb{R}^2$ と空間 $\mathbb{R}^3$ の話は別々に読めるようになっ
+ているはずです．
+
+\section*{参考文献}
+\begin{enumerate}[{[}1{]}]
+\bibitem{Kawasaki} 川崎徹郎，『文様の幾何学』，牧野書店（2014）．
+
+\bibitem{Kouno} 河野俊丈，『結晶群』，共立出版（2015）．
+
+\end{enumerate}
 
  
  \newpage
@@ -2867,7 +2901,6 @@ g_2(x)=-x+b$ の合成として $f=g_2 \circ g_1$ と表せる．以上か
   \circ f_2$ を分類しよう．
 
 \end{enumerate}
-
 
 
 \end{document}
